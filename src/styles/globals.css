@@ -53,7 +53,11 @@ http://scripts.sil.org/OFL
         -webkit-font-smoothing: inherit;
     }
 
+    html {
+        @apply size-full;
+    }
+
     body {
-        @apply font-sans antialiased bg-background text-foreground;
+        @apply font-sans antialiased bg-background text-foreground size-full;
     }
 }
