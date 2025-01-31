@@ -46,7 +46,7 @@ const bezierCommand = (point: Point, i: number, a: Point[]): string => {
   return `C ${cpsX},${cpsY} ${cpeX},${cpeY} ${point.x},${point.y}`;
 };
 
-const generatePath = (): string => {
+const generatePath = (direction: "horizontal" | "vertical"): string => {
   const random = () => {
     const x = Math.random();
     return x - Math.floor(x);
@@ -55,16 +55,19 @@ const generatePath = (): string => {
   const startY = random() * 50 + 25;
 
   const numPoints = Math.floor(random() * 3) + 2;
-  const points: Point[] = [{ x: 0, y: startY }];
+  const points: Point[] =
+    direction === "vertical" ? [{ x: startY, y: 0 }] : [{ x: 0, y: startY }];
 
   for (let i = 0; i < numPoints - 1; i++) {
     const x = Math.min((100 / numPoints) * (i + 1) + random() * 70 - 35, 100);
     const y = random() * 50 + 25;
-    points.push({ x, y });
+    if (direction === "vertical") points.push({ x: y, y: x });
+    else points.push({ x, y });
   }
-  points.push({ x: 100, y: 50 });
+  if (direction === "vertical") points.push({ x: 50, y: 100 });
+  else points.push({ x: 100, y: 50 });
 
-  let pathData = `M 0 ${startY} `;
+  let pathData = direction === "vertical" ? `M ${startY} 0` : `M 0 ${startY} `;
 
   for (let i = 1; i < points.length; i++) {
     pathData += bezierCommand(points[i], i, points);
@@ -74,19 +77,23 @@ const generatePath = (): string => {
 };
 
 export interface LineProps extends SVGProps<SVGSVGElement> {
+  direction?: "horizontal" | "vertical";
   fromColor: string;
   toColor: string;
 }
 
 export const Line = function Line({
+  direction,
   className,
   fromColor,
   toColor,
   ...props
 }: LineProps) {
   const svgRef = useRef<SVGSVGElement>(null);
-  const id = uuidv4().replaceAll("-", "");
-  const path = generatePath();
+  const idRef = useRef(uuidv4().replaceAll("-", ""));
+  const path = generatePath(
+    direction === "vertical" ? "vertical" : "horizontal"
+  );
   useEffect(() => {
     if (!svgRef.current) return;
     const strokeWidth = 4.5;
@@ -94,6 +101,8 @@ export const Line = function Line({
     const gradientPath: SVGPathElement | null =
       svgRef.current.querySelector(".path");
     const dotsGroup = svgRef.current.querySelector(".dots");
+    const oldChildrens = svgRef.current.querySelectorAll(".dots circle");
+    oldChildrens.forEach((child) => child.remove());
     if (gradientPath && dotsGroup) {
       const dotsDensity = 0.7 * strokeWidth;
       const numberOfDots = Math.ceil(
@@ -126,7 +135,7 @@ export const Line = function Line({
         });
       }
     }
-  }, [svgRef]);
+  }, [svgRef, direction]);
 
   return (
     <svg
@@ -136,10 +145,10 @@ export const Line = function Line({
       {...props}
     >
       <defs>
-        <path className="path" id={id} d={path} />
-        <mask id={`${id}-mask`}>
+        <path className="path" id={idRef.current} d={path} />
+        <mask id={`${idRef.current}-mask`}>
           <use
-            href={`#${id}`}
+            href={`#${idRef.current}`}
             strokeWidth="4"
             fill="none"
             stroke="white"
@@ -147,7 +156,7 @@ export const Line = function Line({
           />
         </mask>
       </defs>
-      <g className="dots" mask={`url(#${id}-mask)`}></g>
+      <g className="dots" mask={`url(#${idRef.current}-mask)`}></g>
     </svg>
   );
 };
