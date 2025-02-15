@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* stylelint-disable at-rule-no-unknown */
+/* stylelint-disable-next-line import-notation */
+@import "tailwindcss";
 
 /*
 Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
@@ -19,6 +19,17 @@ http://scripts.sil.org/OFL
 
   /* noinspection CssUnknownTarget */
   src: url("/fonts/PretendardVariable.subset.woff2") format("woff2-variations");
+}
+
+@theme {
+  --font-sans:
+    "Pretendard Variable", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
 }
 
 @layer base {

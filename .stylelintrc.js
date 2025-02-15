@@ -9,13 +9,7 @@ export default {
     "at-rule-no-deprecated": [
       true,
       {
-        ignoreAtRules: [
-          "tailwind",
-          "apply",
-          "variants",
-          "responsive",
-          "screen",
-        ],
+        ignoreAtRules: ["apply", "variants", "responsive", "screen", "theme"],
       },
     ],
   },
