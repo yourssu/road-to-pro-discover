@@ -2,10 +2,11 @@
 import { useLayoutEffect, useState } from "react";
 import { Line } from "./Line";
 import { cn } from "@/lib/utils";
+import { useGSAP, type useGSAPReturn } from "@gsap/react";
 
 export default function LineBackground() {
   const [lineDirection, setLineDirection] = useState<"horizontal" | "vertical">(
-    "horizontal"
+    "horizontal",
   );
   useLayoutEffect(() => {
     const updateDirection = () => {
@@ -24,7 +25,7 @@ export default function LineBackground() {
           "absolute inset-0",
           lineDirection === "horizontal"
             ? "w-full top-1/2 -translate-y-1/2"
-            : "w-[100vh] h-[100vh] left-1/2 -translate-x-1/2"
+            : "w-[100vh] h-[100vh] left-1/2 -translate-x-1/2",
         )}
         fromColor="#16a34a"
         toColor="#0891b2"
@@ -36,7 +37,7 @@ export default function LineBackground() {
           "absolute inset-0",
           lineDirection === "horizontal"
             ? "w-full top-1/2 -translate-y-1/2"
-            : "w-[100vh] h-[100vh] left-1/2 -translate-x-1/2"
+            : "w-[100vh] h-[100vh] left-1/2 -translate-x-1/2",
         )}
         fromColor="#d97706"
         toColor="#e11d48"
@@ -48,7 +49,7 @@ export default function LineBackground() {
           "absolute inset-0",
           lineDirection === "horizontal"
             ? "w-full top-1/2 -translate-y-1/2"
-            : "w-[100vh] h-[100vh] left-1/2 -translate-x-1/2"
+            : "w-[100vh] h-[100vh] left-1/2 -translate-x-1/2",
         )}
         fromColor="#4b5563"
         toColor="#cbd5e1"
@@ -60,7 +61,7 @@ export default function LineBackground() {
           "absolute inset-0",
           lineDirection === "horizontal"
             ? "w-full top-1/2 -translate-y-1/2"
-            : "w-[100vh] h-[100vh] left-1/2 -translate-x-1/2"
+            : "w-[100vh] h-[100vh] left-1/2 -translate-x-1/2",
         )}
         fromColor="#dc2626"
         toColor="#4f46e5"

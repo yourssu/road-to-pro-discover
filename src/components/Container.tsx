@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Intro from "./Intro";
 import Sessions from "./Sessions";
-import LineBackground from "./LineBackground";
+import LineBackground from "./CircleBackground";
 
 export default function Container() {
   const main = useRef<HTMLDivElement | null>(null);
@@ -16,7 +16,7 @@ export default function Container() {
       const sections = gsap.utils.toArray(".panel");
       const scrollTween = gsap.to(sections, {
         xPercent: -100 * (sections.length - 1),
-        duration: 2,
+        duration: 1,
         ease: "none",
         scrollTrigger: {
           trigger: main.current,
@@ -25,33 +25,6 @@ export default function Container() {
           markers: true,
           end: `+=${container.current?.offsetWidth}`,
           snap: 1 / (sections.length - 1),
-        },
-      });
-
-      gsap.to(".title", {
-        xPercent: -50,
-        opacity: 0,
-        scrollTrigger: {
-          trigger: intro.current,
-          start: "right 99%",
-          end: "right center",
-          once: false,
-          scrub: true,
-          containerAnimation: scrollTween,
-        },
-      });
-
-      gsap.to(".scroll-instructions", {
-        xPercent: -50,
-        opacity: 0,
-        reversed: true,
-        scrollTrigger: {
-          trigger: intro.current,
-          start: "right 99%",
-          end: "right center",
-          scrub: true,
-          once: false,
-          containerAnimation: scrollTween,
         },
       });
     },

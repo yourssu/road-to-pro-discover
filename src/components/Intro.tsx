@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import { GalleryVerticalEnd } from "lucide-react";
 import type { HTMLAttributes, RefAttributes } from "react";
+import discover from "@/assets/discover.svg";
 
 export default function Intro({
   className,
@@ -9,29 +9,30 @@ export default function Intro({
   return (
     <section
       className={cn(
-        "h-full flex gap-4 justify-between flex-col md:flex-row items-stretch",
+        "h-full flex gap-4 justify-center flex-col md:flex-row items-stretch",
         className,
       )}
       {...props}
     >
-      <article className="flex flex-col gap-2 h-full justify-center px-16 max-w-screen-md drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)] title">
-        <h1 className="text-8xl font-black">Road To Pro</h1>
-        <h2 className="text-4xl font-bold">DISCOVER</h2>
-        <p className="text-xl">우리가 발견한 숭실, 발견할 숭실</p>
-        <hr />
-        <article className="break-keep">
-          안녕하세요. 유어슈입니다. 로드투프로 화이팅! 안녕하세요. 유어슈입니다.
-          로드투프로 화이팅! 안녕하세요. 유어슈입니다. 로드투프로 화이팅!
-          안녕하세요. 유어슈입니다. 로드투프로 화이팅! 안녕하세요. 유어슈입니다.
-          로드투프로 화이팅! 안녕하세요. 유어슈입니다. 로드투프로 화이팅!
+      <article className="flex flex-col gap-8 h-full justify-center items-center px-16 max-w-screen-md">
+        <img
+          src={discover.src}
+          alt="DISCOVER"
+          className="max-w-none w-[80vw]"
+        />
+        <article className="break-keep flex flex-col gap-4 justify-center items-center description">
+          <h2 className="text-5xl font-bold text-center whitespace-nowrap">
+            우리가 발견한 숭실, 발견할 숭실
+          </h2>
+          <p className="text-lg text-center md:w-max md:max-w-screen-md">
+            안녕하세요. 유어슈입니다. 로드투프로 화이팅! 안녕하세요.
+            유어슈입니다. 로드투프로 화이팅! 안녕하세요. 유어슈입니다.
+            로드투프로 화이팅! 안녕하세요. 유어슈입니다. 로드투프로 화이팅!
+            안녕하세요. 유어슈입니다. 로드투프로 화이팅! 안녕하세요.
+            유어슈입니다. 로드투프로 화이팅!
+          </p>
         </article>
       </article>
-      <aside className="w-full flex flex-col justify-center items-center bg-gradient-to-b md:bg-gradient-to-r via-black/70 to-black md:w-56 p-8">
-        <div className="flex flex-col justify-center items-center gap-2 scroll-instructions">
-          <GalleryVerticalEnd />
-          <p className="text-center break-keep text-sm">스크롤하여 세션 보기</p>
-        </div>
-      </aside>
     </section>
   );
 }
