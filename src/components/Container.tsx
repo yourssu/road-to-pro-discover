@@ -24,9 +24,36 @@ export default function Container() {
           scrub: true,
           markers: true,
           end: `+=${container.current?.offsetWidth}`,
+          snap: 1 / (sections.length - 1),
         },
       });
-      return scrollTween;
+
+      gsap.to(".title", {
+        xPercent: -50,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: intro.current,
+          start: "right 99%",
+          end: "right center",
+          once: false,
+          scrub: true,
+          containerAnimation: scrollTween,
+        },
+      });
+
+      gsap.to(".scroll-instructions", {
+        xPercent: -50,
+        opacity: 0,
+        reversed: true,
+        scrollTrigger: {
+          trigger: intro.current,
+          start: "right 99%",
+          end: "right center",
+          scrub: true,
+          once: false,
+          containerAnimation: scrollTween,
+        },
+      });
     },
     { scope: main },
   );

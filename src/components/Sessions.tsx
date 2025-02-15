@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { GalleryVerticalEnd } from "lucide-react";
 import type { HTMLAttributes, RefAttributes } from "react";
 
 export default function Sessions({
@@ -13,7 +14,7 @@ export default function Sessions({
       )}
       {...props}
     >
-      <article className="flex flex-col gap-2 h-full justify-center px-16 max-w-screen-md drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)]">
+      <article className="bg-gradient-to-b md:bg-gradient-to-r via-black/70 from-black grow flex flex-col gap-2 h-full justify-center px-16 max-w-screen-md drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)]">
         <h1 className="text-8xl font-black">Sessions</h1>
       </article>
     </section>
