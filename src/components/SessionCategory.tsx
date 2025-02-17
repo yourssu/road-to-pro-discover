@@ -17,7 +17,7 @@ export default function SessionCategory({
     <section className={cn("flex flex-col gap-4", className)} {...props}>
       <div className="flex flex-col gap-2">
         <h1 className="text-4xl font-black">{title}</h1>
-        <div>{children}</div>
+        <div className="max-w-lg w-max h-24 break-keep">{children}</div>
       </div>
       <div className="flex gap-4">
         {videos.map((video) => (
