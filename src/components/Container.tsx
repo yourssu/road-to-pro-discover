@@ -47,13 +47,13 @@ export default function Container() {
             },
             {
               url: "",
-              title: "세션명을 입력하세요",
+              title: "학생들의 불편에 공감하기",
               speaker: "Oscar",
               role: "Project Manager",
             },
             {
               url: "",
-              title: "세션명을 입력하세요",
+              title: "협력을 통해 새로운 가치만들기",
               speaker: "Brilliant",
               role: "Project Manager",
             },
@@ -72,13 +72,13 @@ export default function Container() {
           videos={[
             {
               url: "",
-              title: "세션명을 입력하세요",
+              title: "제목 짓기가 어려워",
               speaker: "Jayden",
               role: "Project Management Lead / iOS Engineer",
             },
             {
               url: "",
-              title: "세션명을 입력하세요",
+              title: "유어슈의 디자이너라서 할 수 있었던 일들",
               speaker: "Umi",
               role: "Product Design Lead",
             },
@@ -104,7 +104,7 @@ export default function Container() {
             },
             {
               url: "",
-              title: "세션명을 입력하세요",
+              title: "XState로 퍼널 UI 만들기",
               speaker: "Juun",
               role: "Web Frontend Engineer",
             },
@@ -126,6 +126,12 @@ export default function Container() {
               title: "세션명을 입력하세요",
               speaker: "Dail",
               role: "Human Resources Lead",
+            },
+            {
+              url: "",
+              title: "숭실대를 직접 바꿔가는 학생들",
+              speaker: "Dona",
+              role: "Head Lead",
             },
           ]}
         >

@@ -30,7 +30,9 @@ export default function Sessions({
           {videos.map((video) => (
             <article className="flex flex-col gap-1">
               <div className="aspect-video w-72 bg-gray-300"></div>
-              <h2 className="text-2xl font-bold">{video.title}</h2>
+              <h2 className="text-2xl font-bold w-72 break-keep">
+                {video.title}
+              </h2>
               <p className="font-bold">{video.speaker}</p>
               <p>{video.role}</p>
             </article>
