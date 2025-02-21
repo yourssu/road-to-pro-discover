@@ -15,11 +15,7 @@ export default function Intro({
       {...props}
     >
       <article className="flex flex-col gap-8 h-full justify-center items-center px-16 max-w-screen-md">
-        <img
-          src={discover.src}
-          alt="DISCOVER"
-          className="max-w-none w-[80vw]"
-        />
+        <img src={discover} alt="DISCOVER" className="max-w-none w-[80vw]" />
         <article className="break-keep flex flex-col gap-4 justify-center items-center description">
           <h2 className="text-5xl font-bold text-center whitespace-nowrap">
             우리가 발견한, 발견할

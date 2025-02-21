@@ -27,7 +27,7 @@ const controlPoint = (
   current: Point,
   previous: Point | null,
   next: Point | null,
-  reverse = false
+  reverse = false,
 ): Point => {
   const p = previous || current;
   const n = next || current;
@@ -92,7 +92,7 @@ export const Line = function Line({
   const svgRef = useRef<SVGSVGElement>(null);
   const idRef = useRef(uuidv4().replaceAll("-", ""));
   const path = generatePath(
-    direction === "vertical" ? "vertical" : "horizontal"
+    direction === "vertical" ? "vertical" : "horizontal",
   );
   useEffect(() => {
     if (!svgRef.current) return;
@@ -106,12 +106,12 @@ export const Line = function Line({
     if (gradientPath && dotsGroup) {
       const dotsDensity = 0.7 * strokeWidth;
       const numberOfDots = Math.ceil(
-        (dotsDensity * gradientPath.getTotalLength()) / strokeWidth
+        (dotsDensity * gradientPath.getTotalLength()) / strokeWidth,
       );
       for (let idx = 0; idx <= numberOfDots; idx++) {
         const circle = document.createElementNS(
           "http://www.w3.org/2000/svg",
-          "circle"
+          "circle",
         );
         dotsGroup.appendChild(circle);
 

@@ -2,7 +2,6 @@
 import { useLayoutEffect, useState } from "react";
 import { Line } from "./Line";
 import { cn } from "@/lib/utils";
-import { useGSAP, type useGSAPReturn } from "@gsap/react";
 
 export default function LineBackground() {
   const [lineDirection, setLineDirection] = useState<"horizontal" | "vertical">(
