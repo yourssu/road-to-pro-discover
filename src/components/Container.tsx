@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Intro from "./Intro";
@@ -9,7 +9,7 @@ export default function Container() {
   const main = useRef<HTMLDivElement | null>(null);
   const container = useRef<HTMLDivElement | null>(null);
   const intro = useRef<HTMLDivElement | null>(null);
-  const sessions = useRef<HTMLDivElement | null>(null);
+  const [scrollTween, setScrollTween] = useState<GSAPTween | null>(null);
 
   useGSAP(
     () => {
@@ -21,12 +21,13 @@ export default function Container() {
         scrollTrigger: {
           trigger: main.current,
           pin: true,
-          scrub: true,
-          markers: true,
+          scrub: 0.1,
           end: `+=${container.current?.offsetWidth}`,
           snap: 1 / (sections.length - 1),
         },
       });
+      setScrollTween(scrollTween);
+      return scrollTween;
     },
     { scope: main },
   );
@@ -36,6 +37,7 @@ export default function Container() {
       <div ref={container} className="w-max h-full flex flex-nowrap">
         <Intro ref={intro} className="w-screen h-screen panel" />
         <Sessions
+          containerAnimation={scrollTween ?? undefined}
           className="w-screen h-screen panel"
           title="Project"
           videos={[
@@ -67,6 +69,7 @@ export default function Container() {
         </Sessions>
 
         <Sessions
+          containerAnimation={scrollTween ?? undefined}
           className="w-screen h-screen panel"
           title="Planning & Design"
           videos={[
@@ -93,6 +96,7 @@ export default function Container() {
         </Sessions>
 
         <Sessions
+          containerAnimation={scrollTween ?? undefined}
           className="w-screen h-screen panel"
           title="Engineering"
           videos={[
@@ -118,6 +122,7 @@ export default function Container() {
         </Sessions>
 
         <Sessions
+          containerAnimation={scrollTween ?? undefined}
           className="w-screen h-screen panel"
           title="Operation"
           videos={[
