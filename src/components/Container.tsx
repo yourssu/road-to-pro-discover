@@ -43,7 +43,7 @@ export default function Container() {
           videos={[
             {
               url: "",
-              title: "세션명을 입력하세요",
+              title: "애자일스럽게 움직여보기",
               speaker: "Sereal",
               role: "Project Manager / iOS Engineer",
             },
