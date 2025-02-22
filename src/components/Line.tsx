@@ -1,7 +1,8 @@
+/* Unused; reserved for a record */
 "use client";
 import { cn } from "@/lib/utils";
 import gsap from "gsap";
-import { useEffect, useRef, type SVGProps } from "react";
+import { type SVGProps, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 type Point = {

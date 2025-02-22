@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import Intro from "./Intro";
-import Sessions from "./Sessions";
-import LineBackground from "./CircleBackground";
+import Intro from "@/components/Intro";
+import Sessions from "@/components/Sessions";
+import CircleBackground from "@/components/CircleBackground";
 
 export default function Container() {
   const main = useRef<HTMLDivElement | null>(null);
@@ -33,7 +33,7 @@ export default function Container() {
   );
   return (
     <main ref={main} className="w-screen h-screen">
-      <LineBackground />
+      <CircleBackground containerAnimation={scrollTween ?? undefined} />
       <div ref={container} className="w-max h-full flex flex-nowrap">
         <Intro ref={intro} className="w-screen h-screen panel" />
         <Sessions
