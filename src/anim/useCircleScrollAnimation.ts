@@ -24,7 +24,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
               ease: "circ.inOut",
               scrollTrigger: {
                 trigger: "#intro",
-                start: "right 30%",
+                start: "right 100%",
                 end: "right 0%",
                 scrub: true,
                 containerAnimation,
