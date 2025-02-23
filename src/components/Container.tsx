@@ -37,11 +37,18 @@ export default function Container() {
     () => {
       const initTl = gsap.timeline({});
       initTl.add(
-        gsap.from(".main-circle", {
-          duration: 1.7,
-          yPercent: 40,
-          ease: "easeOut",
-        }),
+        gsap.fromTo(
+          ".main-circle",
+          {
+            yPercent: 0,
+            ease: "easeOut",
+          },
+          {
+            duration: 1.7,
+            yPercent: -40,
+            ease: "easeOut",
+          },
+        ),
       );
       initTl.add(
         gsap.from(".description", {
@@ -57,13 +64,14 @@ export default function Container() {
     },
   );
   return (
-    <main ref={main} className="w-screen h-screen">
+    <main ref={main} className="w-screen h-full">
       <CircleBackground containerAnimation={scrollTween ?? undefined} />
-      <div ref={container} className="w-max h-full flex flex-nowrap">
-        <Intro ref={intro} className="w-screen h-screen panel" />
+      <div ref={container} className="w-max h-full flex flex-nowrap pt-24">
+        <Intro ref={intro} className="w-screen h-full panel" />
         <Sessions
+          id="project"
           containerAnimation={scrollTween ?? undefined}
-          className="w-screen h-screen panel"
+          className="w-screen h-full panel"
           title="Project"
           videos={[
             {
@@ -94,8 +102,9 @@ export default function Container() {
         </Sessions>
 
         <Sessions
+          id="planning_design"
           containerAnimation={scrollTween ?? undefined}
-          className="w-screen h-screen panel"
+          className="w-screen h-full panel"
           title="Planning & Design"
           videos={[
             {
@@ -121,8 +130,9 @@ export default function Container() {
         </Sessions>
 
         <Sessions
+          id="engineering"
           containerAnimation={scrollTween ?? undefined}
-          className="w-screen h-screen panel"
+          className="w-screen h-full panel"
           title="Engineering"
           videos={[
             {
@@ -147,8 +157,9 @@ export default function Container() {
         </Sessions>
 
         <Sessions
+          id="operation"
           containerAnimation={scrollTween ?? undefined}
-          className="w-screen h-screen panel"
+          className="w-screen h-full panel"
           title="Operation"
           videos={[
             {

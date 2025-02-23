@@ -67,25 +67,34 @@ export default function Sessions({
     <section
       ref={ref}
       className={cn(
-        "h-full flex gap-8 px-24 justify-between items-center overflow-auto",
+        "w-full h-full flex gap-8 px-4 lg:px-24 justify-between items-center overflow-visible",
         className,
       )}
       {...props}
     >
       <section className={"flex flex-col gap-4"}>
-        <div className="flex flex-col gap-2">
-          <h1 className="title text-4xl font-black">{title}</h1>
-          <div className="desc max-w-lg w-max h-24 break-keep">{children}</div>
+        <div className="flex flex-col gap-2 w-full">
+          <h1 className="title text-xl lg:text-4xl font-black">{title}</h1>
+          <div className="desc text-sm lg:text-base lg:max-w-lg lg:w-max h-24 break-keep">
+            {children}
+          </div>
         </div>
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           {videos.map((video) => (
-            <article key={video.title} className="vid flex flex-col gap-1">
-              <div className="thumbnail aspect-video w-72 bg-gray-300"></div>
-              <h2 className="vid-title text-2xl font-bold w-72 break-keep">
-                {video.title}
-              </h2>
-              <p className="vid-speaker font-bold">{video.speaker}</p>
-              <p className="vid-role">{video.role}</p>
+            <article
+              key={video.title}
+              className="vid flex flex-col gap-1 items-start w-full lg:w-72"
+            >
+              <div className="thumbnail aspect-video w-48 lg:w-72 bg-gray-300"></div>
+              <div className="flex flex-wrap items-center lg:items-start lg:flex-col gap-1">
+                <h2 className="vid-title text-lg lg:text-2xl font-bold break-keep basis-full lg:basis-auto">
+                  {video.title}
+                </h2>
+                <p className="vid-speaker font-bold text-sm lg:text-base">
+                  {video.speaker}
+                </p>
+                <p className="vid-role text-sm lg:text-base">{video.role}</p>
+              </div>
             </article>
           ))}
         </div>
