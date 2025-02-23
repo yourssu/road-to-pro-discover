@@ -43,12 +43,29 @@ export default function CircleBackground({
       >
         <defs>
           <radialGradient id="circle_gradient" fx="25%" fy="25%">
-            <stop offset="0%" stopColor="oklch(100% 0 3)" />
-            <stop offset="18%" stopColor="oklch(87.92% 0 0)" />
-            <stop offset="75%" stopColor="oklch(49.26% 0 0)" />
-            <stop offset="100%" stopColor="oklch(32.11% 0 0)" />
+            <stop className="first" offset="0%" stopColor="oklch(100% 0 3)" />
+            <stop
+              className="second"
+              offset="18%"
+              stopColor="oklch(87.92% 0 0)"
+            />
+            <stop
+              className="third"
+              offset="75%"
+              stopColor="oklch(49.26% 0 0)"
+            />
+            <stop
+              className="fourth"
+              offset="100%"
+              stopColor="oklch(32.11% 0 0)"
+            />
           </radialGradient>
           <PathGenerator id="project_path" />
+          <PathGenerator id="plan_path_1" />
+          <PathGenerator id="plan_path_2" />
+          <PathGenerator id="plan_path_3" />
+          <PathGenerator id="eng_path" />
+          <PathGenerator id="op_path" />
         </defs>
         <circle
           className="main-circle"
@@ -59,6 +76,41 @@ export default function CircleBackground({
         ></circle>
         <circle
           className="project-circle"
+          cx="0"
+          cy="0"
+          r="7.5"
+          fill="url(#circle_gradient)"
+        ></circle>
+        <circle
+          className="plan-circle-1"
+          cx="0"
+          cy="0"
+          r="7.5"
+          fill="url(#circle_gradient)"
+        ></circle>
+        <circle
+          className="plan-circle-2"
+          cx="0"
+          cy="0"
+          r="7.5"
+          fill="url(#circle_gradient)"
+        ></circle>
+        <circle
+          className="plan-circle-3"
+          cx="0"
+          cy="0"
+          r="7.5"
+          fill="url(#circle_gradient)"
+        ></circle>
+        <circle
+          className="eng-circle"
+          cx="0"
+          cy="0"
+          r="7.5"
+          fill="url(#circle_gradient)"
+        ></circle>
+        <circle
+          className="op-circle"
           cx="0"
           cy="0"
           r="7.5"
