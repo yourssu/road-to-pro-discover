@@ -5,6 +5,39 @@ import { useLayoutEffect, useRef, useState } from "react";
 import { PathGenerator } from "@/components/PathGenerator";
 import { useCircleScrollAnimation } from "@/anim/useCircleScrollAnimation";
 import { useCursorMovementAnimation } from "@/anim/useCursorMovementAnimation";
+import { CircleAnimDef, circleDefs } from "@/lib/def";
+
+function generatePath(circleDef: CircleAnimDef) {
+  const qtyArr = [...Array(circleDef.qty)];
+
+  return (
+    <>
+      {qtyArr.map((_, i) => (
+        <PathGenerator key={i} id={`${circleDef.name}_path_${i}`} />
+      ))}
+      )
+    </>
+  );
+}
+
+function generateCircle(circleDef: CircleAnimDef) {
+  const qtyArr = [...Array(circleDef.qty)];
+
+  return (
+    <>
+      {qtyArr.map((_, i) => (
+        <circle
+          key={i}
+          className={`${circleDef.name}-circle-${i}`}
+          cx="0"
+          cy="0"
+          r={`${circleDef.r}`}
+          fill="url(#circle_gradient)"
+        ></circle>
+      ))}
+    </>
+  );
+}
 
 export default function CircleBackground({
   containerAnimation,
@@ -60,12 +93,10 @@ export default function CircleBackground({
               stopColor="oklch(32.11% 0 0)"
             />
           </radialGradient>
-          <PathGenerator id="project_path" />
-          <PathGenerator id="plan_path_1" />
-          <PathGenerator id="plan_path_2" />
-          <PathGenerator id="plan_path_3" />
-          <PathGenerator id="eng_path" />
-          <PathGenerator id="op_path" />
+          {generatePath(circleDefs.project)}
+          {generatePath(circleDefs.planningDesign)}
+          {generatePath(circleDefs.engineering)}
+          {generatePath(circleDefs.operation)}
         </defs>
         <circle
           className="main-circle"
@@ -74,48 +105,10 @@ export default function CircleBackground({
           r="30"
           fill="url(#circle_gradient)"
         ></circle>
-        <circle
-          className="project-circle"
-          cx="0"
-          cy="0"
-          r="7.5"
-          fill="url(#circle_gradient)"
-        ></circle>
-        <circle
-          className="plan-circle-1"
-          cx="0"
-          cy="0"
-          r="7.5"
-          fill="url(#circle_gradient)"
-        ></circle>
-        <circle
-          className="plan-circle-2"
-          cx="0"
-          cy="0"
-          r="7.5"
-          fill="url(#circle_gradient)"
-        ></circle>
-        <circle
-          className="plan-circle-3"
-          cx="0"
-          cy="0"
-          r="7.5"
-          fill="url(#circle_gradient)"
-        ></circle>
-        <circle
-          className="eng-circle"
-          cx="0"
-          cy="0"
-          r="14"
-          fill="url(#circle_gradient)"
-        ></circle>
-        <circle
-          className="op-circle"
-          cx="0"
-          cy="0"
-          r="14"
-          fill="url(#circle_gradient)"
-        ></circle>
+        {generateCircle(circleDefs.project)}
+        {generateCircle(circleDefs.planningDesign)}
+        {generateCircle(circleDefs.engineering)}
+        {generateCircle(circleDefs.operation)}
       </svg>
     </div>
   );
