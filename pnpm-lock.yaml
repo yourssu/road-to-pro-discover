@@ -20,6 +20,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.0.7
         version: 4.0.7(vite@6.1.1(jiti@2.4.2)(lightningcss@1.29.1))
+      '@yourssu/handy-icons-react':
+        specifier: ^1.0.0
+        version: 1.0.0
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -918,6 +921,9 @@ packages:
     resolution: {integrity: sha512-T4sHPvS+DIqDP51ifPqa9XIRAz/kIvIi8oXcnOZZgHmMotgmmdxe/DD5tMFlt5nuIRzT0/QuiwmKlH0503Aapw==}
     peerDependencies:
       vite: ^4 || ^5 || ^6
+
+  '@yourssu/handy-icons-react@1.0.0':
+    resolution: {integrity: sha512-Hf43t9HRJnERJqJQrf9mi/wD4RCJ5QDUsJAQky4ZIK2oFye8OQgmyYNB4t19pw1CGSci4CWjzxgQaB4F0XQUNg==}
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -2307,6 +2313,10 @@ packages:
     resolution: {integrity: sha512-+QU2zd6OTD8XWIJCbffaiQeH9U73qIqafo1x6V1snCWYGJf6cVE0cDR4D8xRzcEnfI21IFrUPzPGtcPf8AC+Rw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
+  xmldom@0.6.0:
+    resolution: {integrity: sha512-iAcin401y58LckRZ0TkI4k0VSM1Qg0KGSc3i8rU+xrxe19A/BN1zHyVSJY7uoutVlaTSzYyk/v5AmkewAP7jtg==}
+    engines: {node: '>=10.0.0'}
+
   yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
@@ -2967,6 +2977,12 @@ snapshots:
       vite: 6.1.1(jiti@2.4.2)(lightningcss@1.29.1)
     transitivePeerDependencies:
       - '@swc/helpers'
+
+  '@yourssu/handy-icons-react@1.0.0':
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+      xmldom: 0.6.0
 
   acorn-jsx@5.3.2(acorn@8.14.0):
     dependencies:
@@ -4566,5 +4582,7 @@ snapshots:
     dependencies:
       imurmurhash: 0.1.4
       signal-exit: 4.1.0
+
+  xmldom@0.6.0: {}
 
   yocto-queue@0.1.0: {}

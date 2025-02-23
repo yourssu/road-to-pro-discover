@@ -5,15 +5,14 @@ import {
   PopoverPortal,
   PopoverTrigger,
 } from "@radix-ui/react-popover";
-import { ListLine } from "@/icons/ListLine";
-import { Close } from "@/icons/Close";
+import { IcCloseLine, IcListLine } from "@yourssu/handy-icons-react";
 
 export default function NavigationPopover() {
   return (
     <Popover>
       <PopoverTrigger asChild>
         <button className="cursor-pointer dropdown-btn hover:scale-105 rounded-lg transition-all active:scale-95 active:bg-white/25">
-          <ListLine className="size-12 lg:size-16 text-white" />
+          <IcListLine className="size-12 lg:size-16 text-white" />
         </button>
       </PopoverTrigger>
       <PopoverPortal>
@@ -25,7 +24,7 @@ export default function NavigationPopover() {
             <div className="flex justify-between items-center px-2 pt-2">
               <h1 className="font-bold">Road To Pro: Discover</h1>
               <PopoverClose asChild>
-                <Close className="cursor-pointer size-6 text-netural-900 hover:scale-105 hover:bg-black/25 rounded-lg p-1 transition-all active:scale-95" />
+                <IcCloseLine className="cursor-pointer size-6 text-netural-900 hover:scale-105 hover:bg-black/25 rounded-lg p-1 transition-all active:scale-95" />
               </PopoverClose>
             </div>
             <hr className="border-neutral-400 mx-2" />
