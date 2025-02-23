@@ -44,7 +44,6 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
         const tl = gsap.timeline({
           scrollTrigger: {
             containerAnimation,
-            markers: true,
             scrub: true,
           },
         });
@@ -260,7 +259,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
               scale: 0,
             },
             {
-              scale: 4,
+              scale: 2,
               motionPath: {
                 path: "#op_path",
                 start: 0,

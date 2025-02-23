@@ -106,14 +106,14 @@ export default function CircleBackground({
           className="eng-circle"
           cx="0"
           cy="0"
-          r="7.5"
+          r="14"
           fill="url(#circle_gradient)"
         ></circle>
         <circle
           className="op-circle"
           cx="0"
           cy="0"
-          r="7.5"
+          r="14"
           fill="url(#circle_gradient)"
         ></circle>
       </svg>
