@@ -31,6 +31,31 @@ export default function Container() {
     },
     { scope: main },
   );
+
+  // Initial Animation
+  useGSAP(
+    () => {
+      const initTl = gsap.timeline({});
+      initTl.add(
+        gsap.from(".main-circle", {
+          duration: 1.7,
+          yPercent: 40,
+          ease: "easeOut",
+        }),
+      );
+      initTl.add(
+        gsap.from(".description", {
+          duration: 0.5,
+          opacity: 0,
+          ease: "easeOut",
+        }),
+        ">",
+      );
+    },
+    {
+      scope: main,
+    },
+  );
   return (
     <main ref={main} className="w-screen h-screen">
       <CircleBackground containerAnimation={scrollTween ?? undefined} />
