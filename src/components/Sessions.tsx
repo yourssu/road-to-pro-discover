@@ -69,10 +69,10 @@ export default function Sessions({
       )}
       {...props}
     >
-      <section className={"flex flex-col gap-4"}>
+      <section className={"flex flex-col gap-4 lg:gap-8"}>
         <div className="flex flex-col gap-2 w-full">
-          <h1 className="title text-xl lg:text-4xl font-black">{title}</h1>
-          <div className="desc text-sm lg:text-base lg:max-w-lg lg:w-max h-24 break-keep">
+          <h1 className="title text-xl lg:text-6xl font-black">{title}</h1>
+          <div className="desc text-sm lg:text-lg lg:max-w-lg lg:w-max h-24 break-keep">
             {children}
           </div>
         </div>
