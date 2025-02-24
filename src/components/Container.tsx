@@ -65,7 +65,7 @@ export default function Container() {
   return (
     <main ref={main} className="w-screen h-full">
       <CircleBackground containerAnimation={scrollTween ?? undefined} />
-      <div ref={container} className="w-[500vw] h-full flex flex-nowrap pt-24">
+      <div ref={container} className="w-[510vw] h-full flex flex-nowrap pt-24">
         <Intro ref={intro} className="w-screen h-full panel" />
         <Sessions
           id="project"
