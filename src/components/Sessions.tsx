@@ -29,7 +29,6 @@ export default function Sessions({
             containerAnimation,
             start: "center 100%",
             end: "center 50%",
-            scrub: true,
           },
         });
         gsap.from(".desc", {
@@ -41,7 +40,6 @@ export default function Sessions({
             containerAnimation,
             start: "center 90%",
             end: "center 50%",
-            scrub: true,
           },
         });
         gsap.from(".vid", {
@@ -53,7 +51,6 @@ export default function Sessions({
             containerAnimation,
             start: "center 70%",
             end: "center 50%",
-            scrub: true,
           },
         });
       }

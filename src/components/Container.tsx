@@ -21,9 +21,8 @@ export default function Container() {
         scrollTrigger: {
           trigger: main.current,
           pin: true,
-          scrub: 0.1,
+          scrub: 0.5,
           end: `+=${container.current?.offsetWidth}`,
-          snap: 1 / (sections.length - 1),
         },
       });
       setScrollTween(scrollTween);
@@ -66,7 +65,7 @@ export default function Container() {
   return (
     <main ref={main} className="w-screen h-full">
       <CircleBackground containerAnimation={scrollTween ?? undefined} />
-      <div ref={container} className="w-max h-full flex flex-nowrap pt-24">
+      <div ref={container} className="w-[500vw] h-full flex flex-nowrap pt-24">
         <Intro ref={intro} className="w-screen h-full panel" />
         <Sessions
           id="project"
