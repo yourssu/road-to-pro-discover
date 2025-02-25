@@ -23,6 +23,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
     () => {
       if (containerAnimation) {
         const tl = gsap.timeline({
+          delay: 3,
           scrollTrigger: {
             containerAnimation,
             scrub: true,

@@ -36,6 +36,20 @@ export default function Container() {
   useGSAP(
     () => {
       const initTl = gsap.timeline({});
+      const introGradient = [
+        "oklch(100% 0 3)",
+        "oklch(87.92% 0 0)",
+        "oklch(49.26% 0 0)",
+        "oklch(32.11% 0 0)",
+      ];
+      const classes = ["first", "second", "third", "fourth"];
+      classes.forEach((c, i) => {
+        initTl.add(
+          gsap.set(`#circle_gradient .${c}`, {
+            stopColor: introGradient[i],
+          }),
+        );
+      });
       initTl.add(
         gsap.fromTo(
           ".main-circle",
