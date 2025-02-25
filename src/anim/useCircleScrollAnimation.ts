@@ -36,7 +36,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
           currentPanel: string,
           nextPanel?: string,
         ) => {
-          const randBreakpoint = Math.random() * 0.5 + 0.5;
+          const randBreakpoint = Math.random() * 0.5 + 0.35;
           tl.add(
             gsap.fromTo(
               circleSelector,
