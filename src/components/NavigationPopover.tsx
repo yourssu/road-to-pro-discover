@@ -30,22 +30,22 @@ export default function NavigationPopover() {
             <hr className="border-neutral-400 mx-2" />
             <div>
               <ul className="ml-2">
-                <li className="rounded-lg hover:bg-neutral-600/25 transition-all py-1 px-2">
+                <li className="rounded-lg hover:bg-neutral-600/25 active:bg-neutral-600/50 active:scale-95 transition-all py-1 px-2">
                   <a href="#project" className="w-full inline-block">
                     Project
                   </a>
                 </li>
-                <li className="rounded-lg hover:bg-neutral-600/25 transition-all py-1 px-2">
+                <li className="rounded-lg hover:bg-neutral-600/25 active:bg-neutral-600/50 active:scale-95 transition-all py-1 px-2">
                   <a href="#planning_design" className="w-full inline-block">
                     Planning & Design
                   </a>
                 </li>
-                <li className="rounded-lg hover:bg-neutral-600/25 transition-all py-1 px-2">
+                <li className="rounded-lg hover:bg-neutral-600/25 active:bg-neutral-600/50 active:scale-95 transition-all py-1 px-2">
                   <a href="#engineering" className="w-full inline-block">
                     Engineering
                   </a>
                 </li>
-                <li className="rounded-lg hover:bg-neutral-600/25 transition-all py-1 px-2">
+                <li className="rounded-lg hover:bg-neutral-600/25 active:bg-neutral-600/50 active:scale-95 transition-all py-1 px-2">
                   <a href="#operation" className="w-full inline-block">
                     Operation
                   </a>
@@ -59,7 +59,7 @@ export default function NavigationPopover() {
             <a
               href="https://event.yourssu.com/2021"
               target="_blank"
-              className="rounded-lg hover:bg-neutral-600/25 transition-all p-2"
+              className="rounded-lg hover:bg-neutral-600/25 transition-all p-2 active:bg-neutral-600/50 active:scale-95"
             >
               <h1 className="font-bold">Road To Pro / 2021</h1>
               <p className="text-sm text-neutral-600">
