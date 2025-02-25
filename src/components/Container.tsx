@@ -15,14 +15,15 @@ export default function Container() {
     () => {
       const sections = gsap.utils.toArray(".panel");
       const scrollTween = gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
+        xPercent: -105 * (sections.length - 1),
         duration: 1,
         ease: "none",
         scrollTrigger: {
           trigger: main.current,
           pin: true,
           scrub: 0.5,
-          end: () => `+=${container.current?.offsetWidth * 1.05}`,
+          start: "left left",
+          end: () => `+=${container.current!.offsetWidth}`,
         },
       });
       setScrollTween(scrollTween);
@@ -63,9 +64,9 @@ export default function Container() {
     },
   );
   return (
-    <main ref={main} className="w-screen h-full">
+    <main ref={main} className="w-screen h-full overflow-hidden">
       <CircleBackground containerAnimation={scrollTween ?? undefined} />
-      <div ref={container} className="w-[510vw] h-full flex flex-nowrap pt-24">
+      <div ref={container} className="w-[500vw] h-full flex flex-nowrap pt-24">
         <Intro ref={intro} className="w-screen h-full panel" />
         <Sessions
           id="project"
