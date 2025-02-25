@@ -42,9 +42,12 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
               circleSelector,
               {
                 scale: 0,
+                opacity: 0,
               },
               {
                 scale: 1,
+                opacity: 1,
+                duration: 1,
                 motionPath: {
                   path: pathSelector,
                   start: 0,
@@ -70,6 +73,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
               },
               {
                 scale: 0.25,
+                duration: 1,
                 motionPath: {
                   path: pathSelector,
                   start: randBreakpoint,
@@ -88,18 +92,25 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
           );
 
           tl.add(
-            gsap.to(circleSelector, {
-              xPercent: 150,
-              opacity: 0,
-              ease: "power3.out",
-              scrollTrigger: {
-                trigger: nextPanel,
-                start: "left 40%",
-                end: "left 10%",
-                scrub: true,
-                containerAnimation,
+            gsap.fromTo(
+              circleSelector,
+              {
+                opacity: 1,
               },
-            }),
+              {
+                xPercent: 150,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                  trigger: nextPanel,
+                  start: "left 40%",
+                  end: "left 10%",
+                  scrub: true,
+                  containerAnimation,
+                },
+              },
+            ),
           );
         };
 
@@ -124,7 +135,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
                 {
                   stopColor: to[i],
                   ease: "power3.in",
-                  overwrite: false,
+                  duration: 1,
                   scrollTrigger: {
                     trigger,
                     start: "left 90%",
@@ -168,6 +179,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
             {
               scale: 0.25,
               ease: "circ.inOut",
+              duration: 1,
               scrollTrigger: {
                 trigger: "#_intro",
                 start: "right 100%",
@@ -184,6 +196,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
             {
               xPercent: 0,
               yPercent: -40,
+              duration: 1,
               scrollTrigger: {
                 trigger: "#_project",
                 start: "left 80%",

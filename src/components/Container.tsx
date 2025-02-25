@@ -40,7 +40,7 @@ export default function Container() {
     () => {
       const sections = gsap.utils.toArray(".panel");
       const scrollTween = gsap.to(sections, {
-        xPercent: -105 * (sections.length - 1),
+        xPercent: -104 * (sections.length - 1),
         duration: 1,
         ease: "none",
         scrollTrigger: {
@@ -106,7 +106,7 @@ export default function Container() {
   return (
     <main ref={main} className="w-screen h-full overflow-hidden">
       <CircleBackground containerAnimation={scrollTween ?? undefined} />
-      <div ref={container} className="w-[500vw] h-full flex flex-nowrap pt-24">
+      <div ref={container} className="w-[600%] h-full flex flex-nowrap pt-24">
         <Intro ref={intro} className="w-screen h-full panel" />
         <Sessions
           id="_project"
@@ -222,6 +222,7 @@ export default function Container() {
             있는 운영진과 HR의 비결을 여러분들과 공유합니다.
           </p>
         </Sessions>
+        {/*<Outro className="w-screen h-full panel" />*/}
       </div>
     </main>
   );
