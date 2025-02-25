@@ -1,15 +1,40 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Intro from "@/components/Intro";
 import Sessions from "@/components/Sessions";
 import CircleBackground from "@/components/CircleBackground";
 
+const target = [
+  "#intro",
+  "#project",
+  "#planning_design",
+  "#engineering",
+  "#operation",
+];
+
 export default function Container() {
   const main = useRef<HTMLDivElement | null>(null);
   const container = useRef<HTMLDivElement | null>(null);
   const intro = useRef<HTMLDivElement | null>(null);
   const [scrollTween, setScrollTween] = useState<GSAPTween | null>(null);
+
+  useEffect(() => {
+    const hashChange = (e: HashChangeEvent) => {
+      if (container.current && scrollTween?.scrollTrigger) {
+        const idx = Math.max(target.indexOf(window.location.hash), 0);
+        scrollTween.scrollTrigger.scroll(
+          (container.current.offsetWidth / (target.length - 1)) * 0.95 * idx,
+        );
+      }
+      e.preventDefault();
+      e.stopPropagation();
+    };
+    window.addEventListener("hashchange", hashChange);
+    return () => {
+      window.removeEventListener("hashchange", hashChange);
+    };
+  }, [scrollTween?.scrollTrigger]);
 
   useGSAP(
     () => {
@@ -72,6 +97,7 @@ export default function Container() {
         }),
         ">",
       );
+      return initTl;
     },
     {
       scope: main,
@@ -83,7 +109,7 @@ export default function Container() {
       <div ref={container} className="w-[500vw] h-full flex flex-nowrap pt-24">
         <Intro ref={intro} className="w-screen h-full panel" />
         <Sessions
-          id="project"
+          id="_project"
           containerAnimation={scrollTween ?? undefined}
           className="w-screen h-full panel"
           title="Project"
@@ -116,7 +142,7 @@ export default function Container() {
         </Sessions>
 
         <Sessions
-          id="planning_design"
+          id="_planning_design"
           containerAnimation={scrollTween ?? undefined}
           className="w-screen h-full panel"
           title="Planning & Design"
@@ -144,7 +170,7 @@ export default function Container() {
         </Sessions>
 
         <Sessions
-          id="engineering"
+          id="_engineering"
           containerAnimation={scrollTween ?? undefined}
           className="w-screen h-full panel"
           title="Engineering"
@@ -171,7 +197,7 @@ export default function Container() {
         </Sessions>
 
         <Sessions
-          id="operation"
+          id="_operation"
           containerAnimation={scrollTween ?? undefined}
           className="w-screen h-full panel"
           title="Operation"

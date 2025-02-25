@@ -31,16 +31,24 @@ export default function NavigationPopover() {
             <div>
               <ul className="ml-2">
                 <li className="rounded-lg hover:bg-neutral-600/25 transition-all py-1 px-2">
-                  <a href="#project">Project</a>
+                  <a href="#project" className="w-full inline-block">
+                    Project
+                  </a>
                 </li>
                 <li className="rounded-lg hover:bg-neutral-600/25 transition-all py-1 px-2">
-                  <a href="#planning_design">Planning & Design</a>
+                  <a href="#planning_design" className="w-full inline-block">
+                    Planning & Design
+                  </a>
                 </li>
                 <li className="rounded-lg hover:bg-neutral-600/25 transition-all py-1 px-2">
-                  <a href="#engineering">Engineering</a>
+                  <a href="#engineering" className="w-full inline-block">
+                    Engineering
+                  </a>
                 </li>
                 <li className="rounded-lg hover:bg-neutral-600/25 transition-all py-1 px-2">
-                  <a href="#operation">Operation</a>
+                  <a href="#operation" className="w-full inline-block">
+                    Operation
+                  </a>
                 </li>
               </ul>
             </div>

@@ -14,8 +14,8 @@ export const circleDefs: Record<
   project: {
     name: "proj",
     qty: 8,
-    panel: "#project",
-    nextPanel: "#planning_design",
+    panel: "#_project",
+    nextPanel: "#_planning_design",
     r: 4,
     gradient: [
       "oklch(67.65% 0.2026 41.87)",
@@ -27,8 +27,8 @@ export const circleDefs: Record<
   planningDesign: {
     name: "plan",
     qty: 4,
-    panel: "#planning_design",
-    nextPanel: "#engineering",
+    panel: "#_planning_design",
+    nextPanel: "#_engineering",
     r: 7.5,
     gradient: [
       "oklch(61.65% 0.2126 11.33)",
@@ -40,8 +40,8 @@ export const circleDefs: Record<
   engineering: {
     name: "eng",
     qty: 2,
-    panel: "#engineering",
-    nextPanel: "#operation",
+    panel: "#_engineering",
+    nextPanel: "#_operation",
     r: 12,
     gradient: [
       "oklch(68.25% 0.1743 249.8)",
@@ -53,7 +53,7 @@ export const circleDefs: Record<
   operation: {
     name: "op",
     qty: 1,
-    panel: "#operation",
+    panel: "#_operation",
     r: 28,
     gradient: [
       "oklch(73.38% 0.2465 142.17)",

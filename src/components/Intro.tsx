@@ -15,7 +15,7 @@ export default function Intro({
       {...props}
     >
       <article
-        id="intro"
+        id="_intro"
         className="flex flex-col gap-8 h-full justify-center items-center px-16 max-w-screen-md"
       >
         <img src={discover} alt="DISCOVER" className="max-w-none w-[80vw]" />

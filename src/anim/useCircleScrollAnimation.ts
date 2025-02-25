@@ -169,7 +169,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
               scale: 0.25,
               ease: "circ.inOut",
               scrollTrigger: {
-                trigger: "#intro",
+                trigger: "#_intro",
                 start: "right 100%",
                 end: "right 0%",
                 scrub: true,
@@ -185,7 +185,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
               xPercent: 0,
               yPercent: -40,
               scrollTrigger: {
-                trigger: "#project",
+                trigger: "#_project",
                 start: "left 80%",
                 end: "left 20%",
                 scrub: true,
@@ -197,7 +197,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
               yPercent: -15,
               ease: "power2.inOut",
               scrollTrigger: {
-                trigger: "#project",
+                trigger: "#_project",
                 start: "left 80%",
                 end: "left 40%",
                 scrub: true,
@@ -212,7 +212,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
         setupCirclePanel(circleDefs.engineering, gradients.planningDesign);
         setupCirclePanel(circleDefs.operation, gradients.engineering);
 
-        setGradient("#intro", gradients.intro, gradients.intro);
+        setGradient("#_intro", gradients.intro, gradients.intro);
 
         return tl;
       }
