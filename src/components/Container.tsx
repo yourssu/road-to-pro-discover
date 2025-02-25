@@ -22,7 +22,7 @@ export default function Container() {
           trigger: main.current,
           pin: true,
           scrub: 0.5,
-          end: `+=${container.current?.offsetWidth}`,
+          end: () => `+=${container.current?.offsetWidth * 1.05}`,
         },
       });
       setScrollTween(scrollTween);
