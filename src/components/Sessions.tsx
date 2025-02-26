@@ -2,10 +2,11 @@ import { cn } from "@/lib/utils";
 import { type HTMLAttributes, type ReactNode, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { Session } from "@/lib/sessions";
 
 export default function Sessions({
   title,
-  videos,
+  sessions,
   children,
   className,
   containerAnimation,
@@ -13,7 +14,7 @@ export default function Sessions({
 }: HTMLAttributes<HTMLDivElement> & {
   title: string;
   children: ReactNode;
-  videos: { url: string; title: string; speaker: string; role: string }[];
+  sessions: Session[];
   containerAnimation?: GSAPTween;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -77,12 +78,18 @@ export default function Sessions({
           </div>
         </div>
         <div className="flex flex-wrap gap-4">
-          {videos.map((video) => (
+          {sessions.map((video) => (
             <article
               key={video.title}
               className="vid flex flex-col gap-1 items-start w-full lg:w-72"
             >
-              <div className="thumbnail aspect-video w-48 lg:w-72 bg-gray-300"></div>
+              <div className="thumbnail aspect-video w-48 lg:w-72">
+                <img
+                  src={video.thumbnail}
+                  alt={video.title}
+                  className="w-full"
+                />
+              </div>
               <div className="flex flex-wrap items-center lg:items-start lg:flex-col gap-1">
                 <h2 className="vid-title text-lg lg:text-2xl font-bold break-keep basis-full lg:basis-auto">
                   {video.title}

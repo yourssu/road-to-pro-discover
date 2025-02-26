@@ -4,6 +4,7 @@ import gsap from "gsap";
 import Intro from "@/components/Intro";
 import Sessions from "@/components/Sessions";
 import CircleBackground from "@/components/CircleBackground";
+import { sessions } from "@/lib/sessions";
 
 const target = [
   "#intro",
@@ -113,26 +114,7 @@ export default function Container() {
           containerAnimation={scrollTween ?? undefined}
           className="w-screen h-full panel"
           title="Project"
-          videos={[
-            {
-              url: "",
-              title: "애자일스럽게 움직여보기",
-              speaker: "Sereal",
-              role: "Project Manager / iOS Engineer",
-            },
-            {
-              url: "",
-              title: "학생들의 불편에 공감하기",
-              speaker: "Oscar",
-              role: "Project Manager",
-            },
-            {
-              url: "",
-              title: "협력을 통해 새로운 가치만들기",
-              speaker: "Brilliant",
-              role: "Project Manager",
-            },
-          ]}
+          sessions={sessions.filter((s) => s.category === "project")}
         >
           <p>
             유어슈에서는 숭실대학교 학생들을 위한 프로덕트를 만들기 위해 TF
@@ -146,20 +128,7 @@ export default function Container() {
           containerAnimation={scrollTween ?? undefined}
           className="w-screen h-full panel"
           title="Planning & Design"
-          videos={[
-            {
-              url: "",
-              title: "제목 짓기가 어려워",
-              speaker: "Jayden",
-              role: "Project Management Lead / iOS Engineer",
-            },
-            {
-              url: "",
-              title: "유어슈의 디자이너라서 할 수 있었던 일들",
-              speaker: "Umi",
-              role: "Product Design Lead",
-            },
-          ]}
+          sessions={sessions.filter((s) => s.category === "planningDesign")}
         >
           <p>
             유어슈의 프로덕트는 PM과 디자이너의 손을 거쳐 탄생하게 됩니다.
@@ -174,20 +143,7 @@ export default function Container() {
           containerAnimation={scrollTween ?? undefined}
           className="w-screen h-full panel"
           title="Engineering"
-          videos={[
-            {
-              url: "",
-              title: "u-saint 스크래퍼, rusaint 제작기",
-              speaker: "EATSTEAK",
-              role: "Web Frontend Engineer",
-            },
-            {
-              url: "",
-              title: "XState로 퍼널 UI 만들기",
-              speaker: "Juun",
-              role: "Web Frontend Engineer",
-            },
-          ]}
+          sessions={sessions.filter((s) => s.category === "engineering")}
         >
           <p>
             유어슈의 엔지니어들은 프로덕트를 최적의 방법으로 구현하기 위해
@@ -201,20 +157,7 @@ export default function Container() {
           containerAnimation={scrollTween ?? undefined}
           className="w-screen h-full panel"
           title="Operation"
-          videos={[
-            {
-              url: "",
-              title: "세션명을 입력하세요",
-              speaker: "Dail",
-              role: "Human Resources Lead",
-            },
-            {
-              url: "",
-              title: "숭실대를 직접 바꿔가는 학생들",
-              speaker: "Dona",
-              role: "Head Lead",
-            },
-          ]}
+          sessions={sessions.filter((s) => s.category === "operation")}
         >
           <p>
             유어슈라는 조직은 어떻게 운영되고 있을까요? 프로덕트 개발부터 운영,
