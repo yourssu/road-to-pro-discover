@@ -44,20 +44,18 @@ const bezierCommand = (point: Point, i: number, a: Point[]): string => {
 };
 
 const generatePath = (direction: "horizontal" | "vertical"): string => {
-  const random = () => {
-    const x = Math.random();
-    return x - Math.floor(x);
-  };
+  const startY = Math.random() * 50 + 25;
 
-  const startY = random() * 50 + 25;
-
-  const numPoints = Math.floor(random() * 3) + 2;
+  const numPoints = Math.floor(Math.random() * 3) + 2;
   const points: Point[] =
     direction === "vertical" ? [{ x: startY, y: 0 }] : [{ x: 0, y: startY }];
 
   for (let i = 0; i < numPoints - 1; i++) {
-    const x = Math.min((100 / numPoints) * (i + 1) + random() * 70 - 35, 100);
-    const y = random() * 50 + 25;
+    const x = Math.min(
+      (100 / numPoints) * (i + 1) + Math.random() * 70 - 35,
+      100,
+    );
+    const y = Math.random() * 50 + 25;
     if (direction === "vertical") points.push({ x: y, y: x });
     else points.push({ x, y });
   }

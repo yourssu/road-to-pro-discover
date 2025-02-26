@@ -57,7 +57,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
                 scrollTrigger: {
                   trigger: currentPanel,
                   start: "left 70%",
-                  end: "left 0%",
+                  end: "left 10%",
                   scrub: true,
                   containerAnimation,
                 },
@@ -82,7 +82,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
                 ease: "power3.in",
                 scrollTrigger: {
                   trigger: nextPanel,
-                  start: "left 100%",
+                  start: "left 170%",
                   end: "left 50%",
                   scrub: true,
                   containerAnimation,
@@ -104,7 +104,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
                 ease: "power3.out",
                 scrollTrigger: {
                   trigger: nextPanel,
-                  start: "left 40%",
+                  start: "left 80%",
                   end: "left 10%",
                   scrub: true,
                   containerAnimation,
@@ -128,7 +128,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
                   stopColor: from[i],
                   scrollTrigger: {
                     trigger,
-                    start: "left 100%",
+                    start: "left 140%",
                     containerAnimation,
                   },
                 },
@@ -138,8 +138,8 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
                   duration: 1,
                   scrollTrigger: {
                     trigger,
-                    start: "left 90%",
-                    end: "left 0%",
+                    start: "left 100%",
+                    end: "left 30%",
                     scrub: true,
                     containerAnimation,
                   },
