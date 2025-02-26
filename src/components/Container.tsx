@@ -25,7 +25,7 @@ export default function Container() {
       if (container.current && scrollTween?.scrollTrigger) {
         const idx = Math.max(target.indexOf(window.location.hash), 0);
         scrollTween.scrollTrigger.scroll(
-          (container.current.offsetWidth / (target.length - 1)) * 0.95 * idx,
+          (container.current.offsetWidth / (target.length - 1)) * idx,
         );
       }
       e.preventDefault();
