@@ -3,6 +3,7 @@ import { type HTMLAttributes, type ReactNode, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Session } from "@/lib/sessions";
+import SessionView from "./SessionView";
 
 export default function Sessions({
   title,
@@ -78,28 +79,8 @@ export default function Sessions({
           </div>
         </div>
         <div className="flex flex-wrap gap-4">
-          {sessions.map((video) => (
-            <article
-              key={video.title}
-              className="vid flex flex-col gap-1 items-start w-full lg:w-72"
-            >
-              <div className="thumbnail aspect-video w-48 lg:w-72">
-                <img
-                  src={video.thumbnail}
-                  alt={video.title}
-                  className="w-full"
-                />
-              </div>
-              <div className="flex flex-wrap items-center lg:items-start lg:flex-col gap-1">
-                <h2 className="vid-title text-lg lg:text-2xl font-bold break-keep basis-full lg:basis-auto">
-                  {video.title}
-                </h2>
-                <p className="vid-speaker font-bold text-sm lg:text-base">
-                  {video.speaker}
-                </p>
-                <p className="vid-role text-sm lg:text-base">{video.role}</p>
-              </div>
-            </article>
+          {sessions.map((session) => (
+            <SessionView session={session} />
           ))}
         </div>
       </section>
