@@ -41,13 +41,13 @@ export default function Container() {
     () => {
       const sections = gsap.utils.toArray(".panel");
       const scrollTween = gsap.to(sections, {
-        xPercent: -104 * (sections.length - 1),
+        xPercent: -100 * (sections.length - 1),
         duration: 1,
         ease: "none",
         scrollTrigger: {
           trigger: main.current,
           pin: true,
-          scrub: 0.5,
+          scrub: 0.1,
           start: "left left",
           end: () => `+=${container.current!.offsetWidth}`,
         },

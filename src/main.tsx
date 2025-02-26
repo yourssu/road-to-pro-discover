@@ -11,6 +11,10 @@ import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { TextPlugin } from "gsap/TextPlugin";
 
 gsap.registerPlugin(useGSAP, Flip, ScrollTrigger, MotionPathPlugin, TextPlugin);
+ScrollTrigger.config({ ignoreMobileResize: true });
+if (ScrollTrigger.isTouch === 1) {
+  ScrollTrigger.normalizeScroll(true);
+}
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <App />

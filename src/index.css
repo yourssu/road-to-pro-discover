@@ -61,6 +61,10 @@ http://scripts.sil.org/OFL
   * {
     @apply border-border box-border;
 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overscroll-behavior: none;
     -webkit-font-smoothing: inherit;
   }
 
