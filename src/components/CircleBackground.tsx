@@ -68,7 +68,7 @@ export default function CircleBackground({
       <svg
         viewBox="0 0 100 100"
         className={cn(
-          "overflow-visible absolute inset-0 opacity-75",
+          "overflow-visible absolute inset-0",
           deviceOrientation === "horizontal"
             ? "w-full top-1/2 -translate-y-1/2"
             : "w-[100vh] h-[100vh] left-1/2 -translate-x-1/2",
@@ -99,7 +99,7 @@ export default function CircleBackground({
           {generatePath(circleDefs.operation)}
         </defs>
         <circle
-          className="main-circle"
+          className="main-circle opacity-75"
           cx="50"
           cy="80"
           r="30"

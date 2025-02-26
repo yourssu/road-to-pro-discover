@@ -46,7 +46,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
               },
               {
                 scale: 1,
-                opacity: 1,
+                opacity: 0.75,
                 duration: 1,
                 motionPath: {
                   path: pathSelector,
@@ -56,7 +56,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
                 ease: "power3.in",
                 scrollTrigger: {
                   trigger: currentPanel,
-                  start: "left 90%",
+                  start: "left 70%",
                   end: "left 0%",
                   scrub: true,
                   containerAnimation,
@@ -83,7 +83,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
                 scrollTrigger: {
                   trigger: nextPanel,
                   start: "left 100%",
-                  end: "left 20%",
+                  end: "left 50%",
                   scrub: true,
                   containerAnimation,
                 },
@@ -95,7 +95,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
             gsap.fromTo(
               circleSelector,
               {
-                opacity: 1,
+                opacity: 0.75,
               },
               {
                 xPercent: 150,
