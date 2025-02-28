@@ -7,7 +7,7 @@ import {
   DialogPortal,
   DialogTrigger,
 } from "@radix-ui/react-dialog";
-import { ChevronLeft } from "lucide-react";
+import { X } from "lucide-react";
 
 export default function SessionView({ session }: { session: Session }) {
   return (
@@ -15,16 +15,16 @@ export default function SessionView({ session }: { session: Session }) {
       <DialogTrigger asChild>
         <article
           key={session.title}
-          className="vid flex flex-col gap-1 items-start w-full lg:w-72 cursor-pointer"
+          className="vid flex flex-col gap-1 items-start w-full lg:w-72 cursor-pointer group"
         >
-          <div className="thumbnail aspect-video w-48 lg:w-72 hover:scale-105 active:scale-95 transition-all">
+          <div className="thumbnail aspect-video w-36 lg:w-72 transition-all drop-shadow-sm group-hover:scale-105 group-active:scale-95 shadow-md shadow-neutral-500/50 rounded-md overflow-hidden group-hover:shadow-lg group-hover:shadow-neutral-200/50">
             <img
               src={session.thumbnail}
               alt={session.title}
               className="w-full"
             />
           </div>
-          <div className="flex flex-wrap items-center lg:items-start lg:flex-col gap-1">
+          <div className="vid-desc flex flex-wrap items-center lg:items-start lg:flex-col gap-1 group-hover:scale-105 group-active:scale-95 transition-all origin-top">
             <h2 className="vid-title text-lg lg:text-2xl font-bold break-keep basis-full lg:basis-auto">
               {session.title}
             </h2>
@@ -36,11 +36,11 @@ export default function SessionView({ session }: { session: Session }) {
         </article>
       </DialogTrigger>
       <DialogPortal>
-        <DialogOverlay className="fixed inset-0 bg-black/85 z-20" />
-        <DialogContent className="w-full h-full fixed inset-0 z-30">
+        <DialogOverlay className="fixed inset-0 bg-black/85 z-30 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0" />
+        <DialogContent className="w-full h-full fixed inset-0 z-50 data-[state=open]:animate-tv-on data-[state=closed]:animate-tv-off">
           <section className="flex flex-col items-stretch w-full h-full container mx-auto mt-24 p-4 lg:p-8">
-            <DialogClose className="self-stretch py-4 cursor-pointer hover:animate-pulse">
-              <ChevronLeft className="size-8" />
+            <DialogClose className="self-end py-4 cursor-pointer hover:scale-105 active:scale-95">
+              <X className="size-8" />
             </DialogClose>
             <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
               <article className="grow">

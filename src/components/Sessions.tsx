@@ -80,7 +80,7 @@ export default function Sessions({
         </div>
         <div className="flex flex-wrap gap-4">
           {sessions.map((session) => (
-            <SessionView session={session} />
+            <SessionView key={session.title} session={session} />
           ))}
         </div>
       </section>
