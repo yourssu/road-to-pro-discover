@@ -30,6 +30,34 @@ http://scripts.sil.org/OFL
   --color-ring: hsl(var(--ring));
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
+  --shadow-md: 0 0 6px -1px rgb(0 0 0 / 10%), 0 0 6px -4px rgb(0 0 0 / 10%);
+  --shadow-lg: 0 0 15px 3px rgb(0 0 0 / 10%), 0 0 6px -4px rgb(0 0 0 / 10%);
+  --animate-tv-on: 0.7s ease-in-out 0s 1 tv-on;
+  --animate-tv-off: 0.15s ease-in-out 0s 1 tv-off;
+
+  @keyframes tv-on {
+    0% {
+      transform: scaleY(0);
+    }
+
+    75% {
+      transform: scaleY(0);
+    }
+    
+    100% {
+      transform: scaleY(1);
+    }
+  }
+
+  @keyframes tv-off {
+    0% {
+      transform: scaleY(1);
+    }
+
+    100% {
+      transform: scaleY(0);
+    }
+  }
 }
 
 @layer base {
@@ -54,6 +82,10 @@ http://scripts.sil.org/OFL
     --destructive-foreground: 210 40% 98%;
     --ring: 216 34% 17%;
     --radius: 0.5rem;
+  }
+
+  :focus-visible {
+    outline: none;
   }
 }
 
