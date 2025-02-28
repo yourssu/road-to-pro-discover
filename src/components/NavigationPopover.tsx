@@ -18,7 +18,8 @@ export default function NavigationPopover() {
       <PopoverPortal>
         <PopoverContent
           align="end"
-          className="bg-neutral-100 text-neutral-900 rounded-2xl p-2 gap-4 w-72 drop-shadow-lg z-10"
+          sideOffset={4}
+          className="bg-neutral-100 text-neutral-900 rounded-2xl p-2 gap-4 w-72 drop-shadow-lg z-10 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2"
         >
           <div className="flex flex-col gap-2 grow">
             <div className="flex justify-between items-center px-2 pt-2">
