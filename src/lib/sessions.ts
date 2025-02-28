@@ -92,7 +92,7 @@ export const sessions: Session[] = [
     url: "https://www.youtube.com/embed/vHT7UkpsO2I",
     thumbnail: dali,
     title: "유어슈, 더 나은 원팀을 향해",
-    speaker: "Dail",
+    speaker: "Dali",
     role: "Human Resources Lead",
     description: `조직이 목표를 달성하려면, 어떻게 하나로 정렬될 수 있을까요? 
 

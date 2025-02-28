@@ -7,9 +7,11 @@ import {
   DialogPortal,
   DialogTrigger,
 } from "@radix-ui/react-dialog";
-import { X } from "lucide-react";
+import { Play, X } from "lucide-react";
+import { circleDefs } from "@/lib/def";
 
 export default function SessionView({ session }: { session: Session }) {
+  const color = circleDefs[session.category].gradient[0];
   return (
     <Dialog>
       <DialogTrigger asChild>
@@ -17,7 +19,10 @@ export default function SessionView({ session }: { session: Session }) {
           key={session.title}
           className="vid flex flex-col gap-1 items-start w-full lg:w-72 cursor-pointer group"
         >
-          <div className="thumbnail aspect-video w-36 lg:w-72 transition-all drop-shadow-sm group-hover:scale-105 group-active:scale-95 shadow-md shadow-neutral-500/50 rounded-md overflow-hidden group-hover:shadow-lg group-hover:shadow-neutral-200/50">
+          <div className="relative thumbnail aspect-video w-36 lg:w-72 transition-all drop-shadow-sm group-hover:scale-105 group-active:scale-95 shadow-md shadow-neutral-500/50 rounded-md overflow-hidden group-hover:shadow-lg group-hover:shadow-neutral-200/50">
+            <div className="absolute w-full h-full inset-0 opacity-0 bg-black/50 group-hover:opacity-100 transition-opacity flex justify-center items-center">
+              <Play className="size-8 lg:size-12 text-white/75" />
+            </div>
             <img
               src={session.thumbnail}
               alt={session.title}
@@ -38,7 +43,7 @@ export default function SessionView({ session }: { session: Session }) {
       <DialogPortal>
         <DialogOverlay className="fixed inset-0 bg-black/85 z-30 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=closed]:animate-out data-[state=closed]:fade-out-0" />
         <DialogContent className="w-full h-full fixed inset-0 z-50 data-[state=open]:animate-tv-on data-[state=closed]:animate-tv-off">
-          <section className="flex flex-col items-stretch w-full h-full container mx-auto mt-24 p-4 lg:p-8">
+          <section className="flex flex-col justify-center items-stretch w-full h-full container mx-auto p-4 lg:p-8">
             <DialogClose className="self-end py-4 cursor-pointer hover:scale-105 active:scale-95">
               <X className="size-8" />
             </DialogClose>
@@ -66,12 +71,15 @@ export default function SessionView({ session }: { session: Session }) {
                   {session.description}
                 </p>
                 <div className="flex gap-2 my-2 items-center">
-                  <button className="rounded-xl shadow-sm hover:shadow-lg bg-amber-700 text-white font-bold py-2 px-4 hover:bg-amber-800 transition-all cursor-pointer">
-                    공유
-                  </button>
+                  {/*<button className="rounded-xl shadow-sm hover:shadow-lg bg-amber-700 text-white font-bold py-2 px-4 hover:bg-amber-800 transition-all cursor-pointer">*/}
+                  {/*  공유*/}
+                  {/*</button>*/}
                   <a
                     href={`mailto:${session.speaker.toLowerCase()}.urssu@gmail.com`}
-                    className="rounded-xl shadow-sm hover:shadow-lg bg-amber-700 text-white font-bold py-2 px-4 hover:bg-amber-800 transition-all"
+                    className="rounded-xl shadow-sm hover:shadow-lg text-white font-bold py-2 px-4 hover:filter hover:grayscale-50 hover:scale-105 active:scale-95 transition-all"
+                    style={{
+                      backgroundColor: color,
+                    }}
                   >
                     메일 보내기
                   </a>
