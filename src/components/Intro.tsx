@@ -27,15 +27,13 @@ export default function Intro({
             우리가 발견한, 발견할
           </h2>
           <p className="text-sm lg:text-lg text-center md:w-max md:max-w-screen-md">
-            YOURSSU는 숭실대 학생들을 위한 서비스를 직접 만들고 운영하자는
-            목표를 가진 학생들의 모임입니다. 이번 Road to Pro에서는, 우리가
-            유어슈에서 활동하면서 “발견한”, 그리고 앞으로 “발견할” 것들에 대해
-            담게 되었습니다.
-          </p>
-          <p className="text-sm lg:text-lg text-center md:w-max md:max-w-screen-md">
-            유어슈의 일원이 되어 프로젝트를 진행하면서 멤버들이 했던 고민이나
-            해결해야 했던 과제, 그리고 앞으로 도전해 나아갈 방향성을 여러분들과
-            함께 공유하고자 합니다.
+            YOURSSU는 숭실대 학생들을 위한 서비스를 직접 만들고 운영하는 것을
+            목표로 하는 학생들의 모임입니다. 이번 <strong>Road to Pro</strong>
+            에서는 우리가 유어슈에서 활동하며 <strong>발견한</strong> 것들,
+            그리고 앞으로 <strong>발견할</strong>&nbsp;것들을 담았습니다.
+            유어슈의 일원으로서 프로젝트를 진행하며 겪었던 고민과 해결해야 했던
+            과제들, 그리고 앞으로 나아갈 방향에 대해 여러분과 함께 나누고자
+            합니다.
           </p>
         </article>
       </article>
