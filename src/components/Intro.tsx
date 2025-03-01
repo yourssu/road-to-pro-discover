@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import type { HTMLAttributes, RefAttributes } from "react";
 import discover from "@/assets/discover.svg";
 import { preload } from "react-dom";
+import { IcArrowsChevronRightFilled } from "@yourssu/handy-icons-react";
 
 export default function Intro({
   className,
@@ -38,6 +39,21 @@ export default function Intro({
           </p>
         </article>
       </article>
+      <footer className="absolute flex items-center right-0 bottom-0 p-4 opacity-75">
+        <p className="text-sm mr-2">아래로 스크롤해서 더 보기</p>
+        <IcArrowsChevronRightFilled
+          className="size-6 -mx-1 animate-pulse"
+          style={{ animationDelay: "0.5s" }}
+        />
+        <IcArrowsChevronRightFilled
+          className="size-6 -mx-1 animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
+        <IcArrowsChevronRightFilled
+          className="size-6 -mx-1 animate-pulse"
+          style={{ animationDelay: "1.5s" }}
+        />
+      </footer>
     </section>
   );
 }
