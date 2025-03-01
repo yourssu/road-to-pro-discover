@@ -1,11 +1,13 @@
 import { cn } from "@/lib/utils";
 import type { HTMLAttributes, RefAttributes } from "react";
 import discover from "@/assets/discover.svg";
+import { preload } from "react-dom";
 
 export default function Intro({
   className,
   ...props
 }: HTMLAttributes<HTMLDivElement> & RefAttributes<HTMLDivElement>) {
+  preload(discover, { as: "image" });
   return (
     <section
       className={cn(

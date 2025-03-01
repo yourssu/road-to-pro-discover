@@ -1,7 +1,9 @@
 import logo from "@/assets/logo.svg";
 import NavigationPopover from "./NavigationPopover";
+import { preload } from "react-dom";
 
 export default function Header() {
+  preload(logo, { as: "image" });
   return (
     <header className="fixed inset-0 w-full h-24 px-8 py-4 bg-gradient-to-b z-30 from-gray-800/65">
       <nav className="flex gap-4 justify-between items-center h-full">
