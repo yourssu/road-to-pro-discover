@@ -9,7 +9,11 @@ import {
 } from "@radix-ui/react-dialog";
 import { Play } from "lucide-react";
 import { circleDefs } from "@/lib/def";
-import { IcCloseLine } from "@yourssu/handy-icons-react";
+import {
+  IcCloseLine,
+  IcMailFilled,
+  IcMicrophoneFilled,
+} from "@yourssu/handy-icons-react";
 
 export default function SessionView({ session }: { session: Session }) {
   const color = circleDefs[session.category].gradient[0];
@@ -58,11 +62,12 @@ export default function SessionView({ session }: { session: Session }) {
                   className="w-full aspect-video"
                 />
               </article>
-              <aside className="flex flex-col justify-end shrink-0 gap-1">
-                <h1 className="text-xl lg:text-4xl font-bold break-keep">
+              <aside className="flex flex-col justify-end shrink-0 gap-2">
+                <h1 className="text-xl lg:text-4xl font-bold break-keep mb-2">
                   {session.title}
                 </h1>
-                <div className="flex gap-2 mb-4">
+                <div className="flex items-center gap-2">
+                  <IcMicrophoneFilled className="-ml-1" />
                   <p className="font-bold text-base lg:text-lg">
                     {session.speaker}
                   </p>
@@ -77,12 +82,12 @@ export default function SessionView({ session }: { session: Session }) {
                   {/*</button>*/}
                   <a
                     href={`mailto:${session.speaker.toLowerCase()}.urssu@gmail.com`}
-                    className="rounded-xl shadow-sm hover:shadow-lg text-white font-bold py-2 px-4 hover:filter hover:grayscale-50 hover:scale-105 active:scale-95 transition-all"
+                    className="flex gap-2 items-center rounded-xl shadow-sm hover:shadow-lg text-white font-bold py-2 px-4 hover:filter hover:grayscale-50 hover:scale-105 active:scale-95 transition-all"
                     style={{
                       backgroundColor: color,
                     }}
                   >
-                    메일 보내기
+                    <IcMailFilled className="-ml-1" /> 메일 보내기
                   </a>
                 </div>
               </aside>
