@@ -62,7 +62,7 @@ export default function SessionView({ session }: { session: Session }) {
                   className="w-full aspect-video"
                 />
               </article>
-              <aside className="flex flex-col justify-end shrink-0 gap-2">
+              <aside className="flex flex-col justify-end shrink-0 gap-2 lg:max-w-96">
                 <h1 className="text-xl lg:text-4xl font-bold break-keep mb-2">
                   {session.title}
                 </h1>
@@ -73,9 +73,11 @@ export default function SessionView({ session }: { session: Session }) {
                   </p>
                   <p className="text-base lg:text-lg">{session.role}</p>
                 </div>
-                <p className="text-sm lg:text-sm lg:max-w-72 break-keep">
-                  {session.description}
-                </p>
+                <div className="text-sm lg:text-sm break-keep">
+                  {session.description.split("\n").map((line, i) => (
+                    <p key={i}>{line}</p>
+                  ))}
+                </div>
                 <div className="flex gap-2 my-2 items-center">
                   {/*<button className="rounded-xl shadow-sm hover:shadow-lg bg-amber-700 text-white font-bold py-2 px-4 hover:bg-amber-800 transition-all cursor-pointer">*/}
                   {/*  공유*/}
