@@ -100,7 +100,7 @@ export default function CircleBackground({
           {generatePath(circleDefs.outro)}
         </defs>
         <circle
-          className="main-circle opacity-75"
+          className="main-circle opacity-65"
           cx="50"
           cy="80"
           r="30"
