@@ -32,6 +32,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
 
         const addCircle = (
           circleSelector: string,
+          r: number,
           pathSelector: string,
           currentPanel: string,
           nextPanel?: string,
@@ -41,6 +42,9 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
             gsap.fromTo(
               circleSelector,
               {
+                attr: {
+                  r,
+                },
                 scale: 0,
                 opacity: 0,
               },
@@ -74,6 +78,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
               {
                 scale: 0.25,
                 duration: 1,
+                immediateRender: false,
                 motionPath: {
                   path: pathSelector,
                   start: randBreakpoint,
@@ -101,6 +106,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
                 xPercent: 150,
                 opacity: 0,
                 duration: 1,
+                immediateRender: false,
                 ease: "power3.out",
                 scrollTrigger: {
                   trigger: nextPanel,
@@ -136,6 +142,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
                   stopColor: to[i],
                   ease: "power3.in",
                   duration: 1,
+                  immediateRender: false,
                   scrollTrigger: {
                     trigger,
                     start: "left 100%",
@@ -159,6 +166,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
           qtyArr.forEach((_, i) => {
             addCircle(
               `.${def.name}-circle-${i}`,
+              def.r,
               `#${def.name}_path_${i}`,
               def.panel,
               def.nextPanel,

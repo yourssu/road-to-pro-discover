@@ -31,7 +31,7 @@ function generateCircle(circleDef: CircleAnimDef) {
           className={`${circleDef.name}-circle-${i}`}
           cx="0"
           cy="0"
-          r={`${circleDef.r}`}
+          r="0"
           fill="url(#circle_gradient)"
         ></circle>
       ))}
