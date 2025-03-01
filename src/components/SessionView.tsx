@@ -7,8 +7,9 @@ import {
   DialogPortal,
   DialogTrigger,
 } from "@radix-ui/react-dialog";
-import { Play, X } from "lucide-react";
+import { Play } from "lucide-react";
 import { circleDefs } from "@/lib/def";
+import { IcCloseLine } from "@yourssu/handy-icons-react";
 
 export default function SessionView({ session }: { session: Session }) {
   const color = circleDefs[session.category].gradient[0];
@@ -45,7 +46,7 @@ export default function SessionView({ session }: { session: Session }) {
         <DialogContent className="w-full h-full fixed inset-0 z-50 data-[state=open]:animate-tv-on data-[state=closed]:animate-tv-off">
           <section className="flex flex-col justify-center items-stretch w-full h-full container mx-auto p-4 lg:p-8">
             <DialogClose className="self-end py-4 cursor-pointer hover:scale-105 active:scale-95">
-              <X className="size-8" />
+              <IcCloseLine className="size-8" />
             </DialogClose>
             <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
               <article className="grow">

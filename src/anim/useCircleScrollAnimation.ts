@@ -14,7 +14,12 @@ const gradients = Object.fromEntries([
     ],
   ],
 ]) as Record<
-  "intro" | "project" | "planningDesign" | "engineering" | "operation",
+  | "intro"
+  | "project"
+  | "planningDesign"
+  | "engineering"
+  | "operation"
+  | "outro",
   [string, string, string, string]
 >;
 
@@ -232,6 +237,7 @@ export const useCircleScrollAnimation = (containerAnimation?: GSAPTween) =>
         setupCirclePanel(circleDefs.planningDesign, gradients.project);
         setupCirclePanel(circleDefs.engineering, gradients.planningDesign);
         setupCirclePanel(circleDefs.operation, gradients.engineering);
+        setupCirclePanel(circleDefs.outro, gradients.operation);
 
         setGradient("#_intro", gradients.intro, gradients.intro);
 

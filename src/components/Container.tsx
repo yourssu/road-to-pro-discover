@@ -5,6 +5,7 @@ import Intro from "@/components/Intro";
 import Sessions from "@/components/Sessions";
 import CircleBackground from "@/components/CircleBackground";
 import { sessions } from "@/lib/sessions";
+import Outro from "./Outro";
 
 const target = [
   "#intro",
@@ -25,7 +26,7 @@ export default function Container() {
       if (container.current && scrollTween?.scrollTrigger) {
         const idx = Math.max(target.indexOf(window.location.hash), 0);
         scrollTween.scrollTrigger.scroll(
-          (container.current.offsetWidth / (target.length - 1)) * idx,
+          (container.current.offsetWidth / target.length) * idx,
         );
       }
       e.preventDefault();
@@ -165,7 +166,11 @@ export default function Container() {
             있는 운영진과 HR의 비결을 여러분들과 공유합니다.
           </p>
         </Sessions>
-        {/*<Outro className="w-screen h-full panel" />*/}
+        <Outro
+          id="_outro"
+          containerAnimation={scrollTween ?? undefined}
+          className="w-screen h-full panel"
+        />
       </div>
     </main>
   );

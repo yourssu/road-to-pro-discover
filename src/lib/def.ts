@@ -8,7 +8,7 @@ export interface CircleAnimDef {
 }
 
 export const circleDefs: Record<
-  "project" | "planningDesign" | "engineering" | "operation",
+  "project" | "planningDesign" | "engineering" | "operation" | "outro",
   CircleAnimDef
 > = {
   project: {
@@ -54,12 +54,25 @@ export const circleDefs: Record<
     name: "op",
     qty: 1,
     panel: "#_operation",
+    nextPanel: "#_outro",
     r: 28,
     gradient: [
       "oklch(73.38% 0.2465 142.17)",
       "oklch(63.84% 0.2139 142.13)",
       "oklch(35.82% 0.1177 141.71)",
       "oklch(24.13% 0.0772 141.09)",
+    ],
+  },
+  outro: {
+    name: "out",
+    qty: 1,
+    panel: "#_outro",
+    r: 36,
+    gradient: [
+      "oklch(100% 0 3)",
+      "oklch(87.92% 0 0)",
+      "oklch(49.26% 0 0)",
+      "oklch(32.11% 0 0)",
     ],
   },
 };

@@ -97,6 +97,7 @@ export default function CircleBackground({
           {generatePath(circleDefs.planningDesign)}
           {generatePath(circleDefs.engineering)}
           {generatePath(circleDefs.operation)}
+          {generatePath(circleDefs.outro)}
         </defs>
         <circle
           className="main-circle opacity-75"
@@ -109,6 +110,7 @@ export default function CircleBackground({
         {generateCircle(circleDefs.planningDesign)}
         {generateCircle(circleDefs.engineering)}
         {generateCircle(circleDefs.operation)}
+        {generateCircle(circleDefs.outro)}
       </svg>
     </div>
   );
