@@ -6,6 +6,7 @@ import Sessions from "@/components/Sessions";
 import CircleBackground from "@/components/CircleBackground";
 import { sessions } from "@/lib/sessions";
 import Outro from "./Outro";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const target = [
   "#intro",
@@ -13,6 +14,7 @@ const target = [
   "#planning_design",
   "#engineering",
   "#operation",
+  "#",
 ];
 
 export default function Container() {
@@ -20,19 +22,41 @@ export default function Container() {
   const container = useRef<HTMLDivElement | null>(null);
   const intro = useRef<HTMLDivElement | null>(null);
   const [scrollTween, setScrollTween] = useState<GSAPTween | null>(null);
+  const scrolling = useRef(false);
 
   useEffect(() => {
+    const updateHash = () => {
+      const t = scrollTween?.scrollTrigger;
+      if (t && container.current) {
+        const idx = Math.round(
+          t.scroll() / (container.current.offsetWidth / target.length),
+        );
+        const currentSection = target[Math.min(idx, target.length - 1)];
+        if (window.location.hash !== currentSection) {
+          scrolling.current = true;
+          window.location.hash = currentSection;
+        }
+      }
+    };
     const hashChange = (e: HashChangeEvent) => {
-      if (container.current && scrollTween?.scrollTrigger) {
+      if (
+        container.current &&
+        scrollTween?.scrollTrigger &&
+        !scrolling.current
+      ) {
         const idx = Math.max(target.indexOf(window.location.hash), 0);
         scrollTween.scrollTrigger.scroll(
           (container.current.offsetWidth / target.length) * idx,
         );
       }
+      if (scrolling.current) {
+        scrolling.current = false;
+      }
       e.preventDefault();
       e.stopPropagation();
     };
     window.addEventListener("hashchange", hashChange);
+    ScrollTrigger.addEventListener("scrollEnd", updateHash);
     return () => {
       window.removeEventListener("hashchange", hashChange);
     };
@@ -53,6 +77,7 @@ export default function Container() {
           end: () => `+=${container.current!.offsetWidth}`,
         },
       });
+
       setScrollTween(scrollTween);
       return scrollTween;
     },
@@ -166,11 +191,7 @@ export default function Container() {
             여러분과 함께 나눠 봅니다.
           </p>
         </Sessions>
-        <Outro
-          id="_outro"
-          containerAnimation={scrollTween ?? undefined}
-          className="w-screen h-full panel"
-        />
+        <Outro id="_outro" className="w-screen h-full panel" />
       </div>
     </main>
   );
