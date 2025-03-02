@@ -105,14 +105,14 @@ http://scripts.sil.org/OFL
   }
 
   html {
-    @apply size-full;
+    @apply size-full m-0 p-0 overflow-x-hidden;
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground size-full;
+    @apply font-sans antialiased bg-background text-foreground size-full m-0 p-0;
   }
 
   #root {
-    @apply size-full;
+    @apply size-full m-0 p-0;
   }
 }

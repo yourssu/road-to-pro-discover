@@ -3,8 +3,10 @@ import {
   Dialog,
   DialogClose,
   DialogContent,
+  DialogDescription,
   DialogOverlay,
   DialogPortal,
+  DialogTitle,
   DialogTrigger,
 } from "@radix-ui/react-dialog";
 import { Play } from "lucide-react";
@@ -63,9 +65,11 @@ export default function SessionView({ session }: { session: Session }) {
                 />
               </article>
               <aside className="flex flex-col justify-end shrink-0 gap-2 lg:max-w-96">
-                <h1 className="text-xl lg:text-4xl font-bold break-keep mb-2">
-                  {session.title}
-                </h1>
+                <DialogTitle asChild>
+                  <h1 className="text-xl lg:text-4xl font-bold break-keep mb-2">
+                    {session.title}
+                  </h1>
+                </DialogTitle>
                 <div className="flex items-center gap-2">
                   <IcMicrophoneFilled className="-ml-1" />
                   <p className="font-bold text-base lg:text-lg">
@@ -73,11 +77,13 @@ export default function SessionView({ session }: { session: Session }) {
                   </p>
                   <p className="text-base lg:text-lg">{session.role}</p>
                 </div>
-                <div className="text-sm lg:text-sm break-keep">
-                  {session.description.split("\n").map((line, i) => (
-                    <p key={i}>{line}</p>
-                  ))}
-                </div>
+                <DialogDescription asChild>
+                  <div className="text-sm lg:text-sm break-keep">
+                    {session.description.split("\n").map((line, i) => (
+                      <p key={i}>{line}</p>
+                    ))}
+                  </div>
+                </DialogDescription>
                 <div className="flex gap-2 my-2 items-center">
                   {/*<button className="rounded-xl shadow-sm hover:shadow-lg bg-amber-700 text-white font-bold py-2 px-4 hover:bg-amber-800 transition-all cursor-pointer">*/}
                   {/*  공유*/}
