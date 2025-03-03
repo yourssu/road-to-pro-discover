@@ -16,11 +16,23 @@ import {
   IcMailFilled,
   IcMicrophoneFilled,
 } from "@yourssu/handy-icons-react";
+import mixpanel from "mixpanel-browser";
+import {useCallback} from "react";
 
 export default function SessionView({ session }: { session: Session }) {
   const color = circleDefs[session.category].gradient[0];
+
+  const trackOpenSession = useCallback((open: boolean) => {
+    if (open) {
+      mixpanel.track("open_session", {
+        title: session.title,
+        speaker: session.speaker,
+      })
+    }
+  }, [session]);
+
   return (
-    <Dialog>
+    <Dialog onOpenChange={trackOpenSession}>
       <DialogTrigger asChild>
         <article
           key={session.title}
