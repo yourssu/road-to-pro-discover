@@ -60,6 +60,9 @@ importers:
       '@types/eslint-config-prettier':
         specifier: ^6.11.3
         version: 6.11.3
+      '@types/mixpanel-browser':
+        specifier: ^2.51.0
+        version: 2.51.0
       '@types/react':
         specifier: ^19.0.8
         version: 19.0.10
@@ -96,6 +99,9 @@ importers:
       globals:
         specifier: ^15.14.0
         version: 15.15.0
+      mixpanel-browser:
+        specifier: ^2.60.0
+        version: 2.60.0
       prettier:
         specifier: ^3.5.1
         version: 3.5.1
@@ -217,7 +223,6 @@ packages:
   '@babel/plugin-proposal-private-methods@7.18.6':
     resolution: {integrity: sha512-nutsvktDItsNn4rpGItSNV2sz1XwS+nfU0Rg8aCx3W3NOKVzdMjJRu0O5OkgDp3ZGICSTbgRpxZoWsxoKRvbeA==}
     engines: {node: '>=6.9.0'}
-    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-private-methods instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
@@ -850,6 +855,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  '@rrweb/types@2.0.0-alpha.18':
+    resolution: {integrity: sha512-iMH3amHthJZ9x3gGmBPmdfim7wLGygC2GciIkw2A6SO8giSn8PHYtRT8OKNH4V+k3SZ6RSnYHcTQxBA7pSWZ3Q==}
+
   '@tailwindcss/node@4.0.7':
     resolution: {integrity: sha512-dkFXufkbRB2mu3FPsW5xLAUWJyexpJA+/VtQj18k3SUiJVLdpgzBd1v1gRRcIpEJj7K5KpxBKfOXlZxT3ZZRuA==}
 
@@ -943,6 +951,9 @@ packages:
   '@types/babel__traverse@7.20.6':
     resolution: {integrity: sha512-r1bzfrm0tomOI8g1SzvCaQHo6Lcv6zu0EA+W2kHrt8dyrHQxGzBBL4kdkzIS+jBMV+EYcMAEAqXqYaLJq5rOZg==}
 
+  '@types/css-font-loading-module@0.0.7':
+    resolution: {integrity: sha512-nl09VhutdjINdWyXxHWN/w9zlNCfr60JUqJbd24YXUuCwgeL0TpFSdElCwb6cxfB6ybE19Gjj4g0jsgkXxKv1Q==}
+
   '@types/eslint-config-prettier@6.11.3':
     resolution: {integrity: sha512-3wXCiM8croUnhg9LdtZUJQwNcQYGWxxdOWDjPe1ykCqJFPVpzAKfs/2dgSoCtAvdPeaponcWPI7mPcGGp9dkKQ==}
 
@@ -951,6 +962,9 @@ packages:
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
+
+  '@types/mixpanel-browser@2.51.0':
+    resolution: {integrity: sha512-or4HZRDmqMJ1OP+O6h4hB+tVDKJffpVi2bFxi/Gem5TGnE94I7OtWKXtrwdDfSGhfOLL+WQIOUOxUZHAzHNi8A==}
 
   '@types/react-dom@19.0.4':
     resolution: {integrity: sha512-4fSQ8vWFkg+TGhePfUzVmat3eC14TXYSsiiDSLI0dVLsrm9gZFABjPy/Qu6TKgl1tq1Bu1yDsuQgY3A3DOjCcg==}
@@ -1012,6 +1026,9 @@ packages:
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0 || ^6.0.0
+
+  '@xstate/fsm@1.6.5':
+    resolution: {integrity: sha512-b5o1I6aLNeYlU/3CPlj/Z91ybk1gUsKT+5NAJI+2W4UjvS5KLG28K9v5UvNoFVjHV8PajVZ00RH3vnjyQO7ZAw==}
 
   '@yourssu/handy-icons-react@1.0.0':
     resolution: {integrity: sha512-Hf43t9HRJnERJqJQrf9mi/wD4RCJ5QDUsJAQky4ZIK2oFye8OQgmyYNB4t19pw1CGSci4CWjzxgQaB4F0XQUNg==}
@@ -1114,6 +1131,10 @@ packages:
 
   balanced-match@2.0.0:
     resolution: {integrity: sha512-1ugUSr8BHXRnK23KfuYS+gVMC3LB8QGH9W1iGtDPsNWoQbgtXSExkBu2aDR4epiGWZOjZsj6lDl/N/AqqTC3UA==}
+
+  base64-arraybuffer@1.0.2:
+    resolution: {integrity: sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==}
+    engines: {node: '>= 0.6.0'}
 
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
@@ -1430,6 +1451,9 @@ packages:
 
   fastq@1.19.0:
     resolution: {integrity: sha512-7SFSRCNjBQIZH/xZR3iy5iQYR8aGBE0h3VG6/cwlbrpdciNYBMotQav8c1XI3HjHH+NikUpP53nPdlZSdWmFzA==}
+
+  fflate@0.4.8:
+    resolution: {integrity: sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==}
 
   file-entry-cache@10.0.6:
     resolution: {integrity: sha512-0wvv16mVo9nN0Md3k7DMjgAPKG/TY4F/gYMBVb/wMThFRJvzrpaqBFqF6km9wf8QfYTN+mNg5aeaBLfy8k35uA==}
@@ -1915,6 +1939,12 @@ packages:
     resolution: {integrity: sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow==}
     engines: {node: '>=16 || 14 >=14.17'}
 
+  mitt@3.0.1:
+    resolution: {integrity: sha512-vKivATfr97l2/QBCYAkXYDbrIWPM2IIKEl7YPhjCvKlG3kE2gm+uBo6nEXK3M5/Ffh/FLpKExzOQ3JJoJGFKBw==}
+
+  mixpanel-browser@2.60.0:
+    resolution: {integrity: sha512-oys+/EnmFEyJqQkmNqb6wI7qTyVQUfxibvzct5HxI8QvQw/hMXqt2UENem1MqCBDTakAaJvgXNeajG4UulIPqA==}
+
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
@@ -2128,6 +2158,15 @@ packages:
     resolution: {integrity: sha512-489gTVMzAYdiZHFVA/ig/iYFllCcWFHMvUHI1rpFmkoUtRlQxqh6/yiNqnYibjMZ2b/+FUQwldG+aLsEt6bglQ==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
+
+  rrdom@2.0.0-alpha.18:
+    resolution: {integrity: sha512-fSFzFFxbqAViITyYVA4Z0o5G6p1nEqEr/N8vdgSKie9Rn0FJxDSNJgjV0yiCIzcDs0QR+hpvgFhpbdZ6JIr5Nw==}
+
+  rrweb-snapshot@2.0.0-alpha.18:
+    resolution: {integrity: sha512-hBHZL/NfgQX6wO1D9mpwqFu1NJPpim+moIcKhFEjVTZVRUfCln+LOugRc4teVTCISYHN8Cw5e2iNTWCSm+SkoA==}
+
+  rrweb@2.0.0-alpha.13:
+    resolution: {integrity: sha512-a8GXOCnzWHNaVZPa7hsrLZtNZ3CGjiL+YrkpLo0TfmxGLhjNZbWY2r7pE06p+FcjFNlgUVTmFrSJbK3kO7yxvw==}
 
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
@@ -3131,6 +3170,8 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.34.8':
     optional: true
 
+  '@rrweb/types@2.0.0-alpha.18': {}
+
   '@tailwindcss/node@4.0.7':
     dependencies:
       enhanced-resolve: 5.18.1
@@ -3222,11 +3263,15 @@ snapshots:
     dependencies:
       '@babel/types': 7.26.9
 
+  '@types/css-font-loading-module@0.0.7': {}
+
   '@types/eslint-config-prettier@6.11.3': {}
 
   '@types/estree@1.0.6': {}
 
   '@types/json-schema@7.0.15': {}
+
+  '@types/mixpanel-browser@2.51.0': {}
 
   '@types/react-dom@19.0.4(@types/react@19.0.10)':
     dependencies:
@@ -3323,6 +3368,8 @@ snapshots:
       vite: 6.1.1(jiti@2.4.2)(lightningcss@1.29.1)
     transitivePeerDependencies:
       - supports-color
+
+  '@xstate/fsm@1.6.5': {}
 
   '@yourssu/handy-icons-react@1.0.0':
     dependencies:
@@ -3442,6 +3489,8 @@ snapshots:
   balanced-match@1.0.2: {}
 
   balanced-match@2.0.0: {}
+
+  base64-arraybuffer@1.0.2: {}
 
   base64-js@1.5.1: {}
 
@@ -3899,6 +3948,8 @@ snapshots:
     dependencies:
       reusify: 1.0.4
 
+  fflate@0.4.8: {}
+
   file-entry-cache@10.0.6:
     dependencies:
       flat-cache: 6.1.6
@@ -4346,6 +4397,12 @@ snapshots:
     dependencies:
       brace-expansion: 2.0.1
 
+  mitt@3.0.1: {}
+
+  mixpanel-browser@2.60.0:
+    dependencies:
+      rrweb: 2.0.0-alpha.13
+
   ms@2.1.3: {}
 
   nanoid@3.3.8: {}
@@ -4568,6 +4625,25 @@ snapshots:
       '@rollup/rollup-win32-ia32-msvc': 4.34.8
       '@rollup/rollup-win32-x64-msvc': 4.34.8
       fsevents: 2.3.3
+
+  rrdom@2.0.0-alpha.18:
+    dependencies:
+      rrweb-snapshot: 2.0.0-alpha.18
+
+  rrweb-snapshot@2.0.0-alpha.18:
+    dependencies:
+      postcss: 8.5.3
+
+  rrweb@2.0.0-alpha.13:
+    dependencies:
+      '@rrweb/types': 2.0.0-alpha.18
+      '@types/css-font-loading-module': 0.0.7
+      '@xstate/fsm': 1.6.5
+      base64-arraybuffer: 1.0.2
+      fflate: 0.4.8
+      mitt: 3.0.1
+      rrdom: 2.0.0-alpha.18
+      rrweb-snapshot: 2.0.0-alpha.18
 
   run-parallel@1.2.0:
     dependencies:

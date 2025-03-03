@@ -6,6 +6,11 @@ import { GitHub } from "@/icons/GitHub";
 import { Instagram } from "@/icons/Instagram";
 import { YouTube } from "@/icons/YouTube";
 import { IcExternalLinkLine } from "@yourssu/handy-icons-react";
+import mixpanel from "mixpanel-browser";
+
+const trackRecruitingClick = () => {
+  mixpanel.track("link_recruit");
+}
 
 export default function Outro({
   className,
@@ -37,6 +42,7 @@ export default function Outro({
             href="https://yourssu.com/recruiting"
             target="_blank"
             className="mt-4 flex gap-2 items-center text-base lg:text-lg font-bold text-center whitespace-nowrap opacity-75 hover:scale-105 hover:opacity-100 active:scale-95 transition-all"
+            onClick={trackRecruitingClick}
           >
             <IcExternalLinkLine className="size-8" />
             YOURSSU 리크루팅 지원하기 (~03.08)
