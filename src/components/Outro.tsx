@@ -62,7 +62,7 @@ export default function Outro({
               <YouTube className="size-8 text-white/75 hover:scale-105 hover:text-white active:scale-95 transition-all" />
             </a>
             <a
-              href="https://github.com/yourssu/road-to-pro-discover"
+              href="https://github.com/yourssu"
               target="_blank"
             >
               <GitHub className="size-8 text-white/75 hover:scale-105 hover:text-white active:scale-95 transition-all" />
