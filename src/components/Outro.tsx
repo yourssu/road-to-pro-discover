@@ -5,12 +5,6 @@ import logo from "@/assets/logo.svg";
 import { GitHub } from "@/icons/GitHub";
 import { Instagram } from "@/icons/Instagram";
 import { YouTube } from "@/icons/YouTube";
-import { IcExternalLinkLine } from "@yourssu/handy-icons-react";
-import mixpanel from "mixpanel-browser";
-
-const trackRecruitingClick = () => {
-  mixpanel.track("link_recruit");
-}
 
 export default function Outro({
   className,
@@ -25,7 +19,7 @@ export default function Outro({
       ref={outro}
       className={cn(
         "h-full flex gap-4 justify-center flex-col md:flex-row items-stretch",
-        className,
+        className
       )}
       {...props}
     >
@@ -38,15 +32,6 @@ export default function Outro({
           <h2 className="font-bold text-lg lg:text-xl">
             발견과 여정의 시작, 우리는 어디를 향해 걸어가고 있나요?
           </h2>
-          <a
-            href="https://yourssu.com/recruiting"
-            target="_blank"
-            className="mt-4 flex gap-2 items-center text-base lg:text-lg font-bold text-center whitespace-nowrap opacity-75 hover:scale-105 hover:opacity-100 active:scale-95 transition-all"
-            onClick={trackRecruitingClick}
-          >
-            <IcExternalLinkLine className="size-8" />
-            YOURSSU 리크루팅 지원하기 (~03.08)
-          </a>
           <p className="text-sm lg:text-base text-center md:w-max md:max-w-screen-md">
             숭실대학교 학생회관 244호 / ⓒ 2025 Yourssu. All rights reserved.
           </p>
@@ -67,10 +52,7 @@ export default function Outro({
             >
               <YouTube className="size-8 text-white/75 hover:scale-105 hover:text-white active:scale-95 transition-all" />
             </a>
-            <a
-              href="https://github.com/yourssu"
-              target="_blank"
-            >
+            <a href="https://github.com/yourssu" target="_blank">
               <GitHub className="size-8 text-white/75 hover:scale-105 hover:text-white active:scale-95 transition-all" />
             </a>
           </div>
